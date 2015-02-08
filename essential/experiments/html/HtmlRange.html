@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML Video and Range </title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+<body>
+    <div class="experiment">
+        <h3>A Pep Talk from Kid President!</h3>
+        <iframe width="360" height="315"
+                src="http://www.youtube.com/embed/l-gQLqv9f4o"></iframe>
+
+        Rate the video:
+        <form oninput="x.value=parseInt(a.value)">
+            0
+            <input type="range" id="a" name="a" value="0" min="0" max="5">
+            5
+            <br>
+            Current Rating:
+            <output name="x" for="a"></output>
+            <br>
+
+        </form>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 4: HTML Video and Range</h1>
+        <h2>About the experiment</h2>
+        <h3>HTML5 &lt;output&gt; Element </h3>
+        The &lt;output&gt; element represents the result of a calculation (like one performed by a script).
+        <h3>HTML5 &lt;range&gt; Element </h3>
+        The &lt;input type="range"&gt; is used for input fields that should contain a value within a range.
+        Depending on browser support, the input field can be displayed as a slider control.
+        <h2>HTML Video and Range: code snippet view</h2>
+        <h4>HTML output element</h4>
+        <div class="code-snippet">
+            &lt;output name="x" for="a" &lt;/output&gt;
+        </div>
+        <h4>HTML5 &lt;range&gt; Element</h4>
+        <div class="code-snippet">
+            &lt;input type="range" id="a" name="a" value="0" min="0" max="5"&gt;
+        </div>
+        <h4>Embedded video</h4>
+        <div class="code-snippet">
+            &lt;iframe width="360" height="315"
+                    src="http://www.youtube.com/embed/l-gQLqv9f4o"&gt;&lt;/iframe&gt;
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMlRange.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+
+    </div>
+</body>
+</html>

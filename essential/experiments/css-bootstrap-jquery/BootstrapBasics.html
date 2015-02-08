@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+    <h1>Experiment 7: Bootstrap Basics</h1>
+    <h4>Button groups with Bootstrap: (not available in IE8)</h4>
+    <h5 class="text-danger" >Explaination</h5>
+    <p>
+        Bootstrap allows you to group a series of buttons together (on a single line) in a button group.
+    </p>
+    <div class="danger">Demo</div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Round Image</button>
+        <button type="button" class="btn btn-primary">Thumbnail Image</button>
+        <button type="button" class="btn btn-primary">Circular Image</button>
+    </div>
+    <h5>Code snippet</h5>
+    <p class="alert-warning">
+        &lt;button type="button" class="btn btn-primary"&gt;Round Image&lt;/button&gt;
+    </p>    
+
+    <hr />
+    <h4>Types of images with Bootstrap: (not available in IE8)</h4>
+    <div class="danger">Demo</div>
+    <img src="../../images/tree.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+    <img src="../../images/tree.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+    <img src="../../images/tree.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236">
+    <p>About the images created above</p> 
+       <ol>
+            <li>The .img-rounded class adds rounded corners to an image</li>
+            <li>The .img-thumbnail class shapes the image to a thumbnail</li>
+            <li>The .img-circle class shapes the image to a circle</li>
+        </ol>
+    <h5>Code snippet</h5>
+    <p class="alert-warning">
+        &lt;img src="../../images/tree.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"&gt;
+    </p>
+
+    <hr />
+
+    <h4>Bootstrap Striped Progress Bars</h4>
+    <p>A progress bar can be used to show a user how far along he/she is in a process.
+        Bootstrap provides several types of progress bars.</p>
+    <p>Add class .progress-bar-striped to add stripes to the progress bars:</p>
+    <div class="danger">Demo</div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+            This page is loading..... 40% Complete (success)
+        </div>
+    </div>
+    <h5>Code snippet</h5>
+    <p class="alert-warning">
+        &lt;div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" <br />
+             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"&gt;<br />
+            This page is loading..... 40% Complete (success)
+        &lt;/div&gt;
+
+    </p>
+
+
+    <h4>Bootstrap Glyphicons</h4>
+    <p>Bootstrap provides 200 glyphicons from the Glyphicons Halflings set.
+    Glyphicons can be used in text, buttons, toolbars, navigation, forms, etc.</p>
+    <div class="danger">Demo</div>
+    <div class="focus">
+        <p>
+            Mail article:
+            <a href="mailto:patil.av@husky.neu.edu">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </a>
+        |    Print this article: 
+            <a href="#" onclick="window.print();return false">
+            <span class="glyphicon glyphicon-print"></span>
+            </a>
+        |    Search in this article:
+            <a href="#">
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+            |    Download this article:
+            <a href="#" download="BootstrapBasics.html">
+                <span class="glyphicon glyphicon-download"></span>
+            </a>
+        </p>
+    </div>
+    <h5>Code snippet</h5>
+    <p class="alert-warning">
+        &lt;span class="glyphicon glyphicon-download"&gt;&lt;/span&gt;
+    </p>
+
+    <hr />
+
+    <h2>Source code</h2>
+    <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/BootstrapBasics.html" target="_blank">View Source</a> <br />
+    
+    <h2>References</h2>
+    <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+
+</body>
+</html>

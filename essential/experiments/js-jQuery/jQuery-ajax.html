@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-1.11.2.js"></script>
+    <title>JQuery and AJAX Content change</title>
+    <link rel="stylesheet" href="CSSExperiment.css">
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#ajaxdiv1").load("load_lrem_ipsum.txt");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <h2>Loading file....</h2>
+        <div id="ajaxdiv1">Here is the text which will be changed via jQuery AJAX!</div>
+
+        <button>Click me to Load Data from Text file!!</button>
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 14 : JQuery and AJAX Content change</h1>
+       
+        <h2>About the experiment</h2>
+        <p>AJAX is the art of exchanging data with a server, and updating parts of a web page - without reloading the whole page. </p>
+        <h4>What is AJAX?</h4>
+        <p>
+            AJAX = Asynchronous JavaScript and XML.<br />
+            In short; AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.
+            Examples of applications using AJAX: Gmail, Google Maps, Youtube, and Facebook tabs.
+        </p>
+        <p>
+            Without jQuery, AJAX coding can be a bit tricky! Writing regular AJAX code can be a bit tricky,
+             because different browsers have different syntax for AJAX implementation. This means that you will have to write
+             extra code to test for different browsers. However, the jQuery team has taken care of this for us, so that we can
+             write AJAX functionality with only one single line of code.
+        </p>
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            $(document).ready(function () {                      <br />
+                $("button").click(function () {                  <br />
+                    $("#ajaxdiv1").load("load_lrem_ipsum.txt");  <br /> 
+                });                                              <br />
+            });                                                  <br />
+        </div>
+        <p> 
+            The load function will load the data from the file to the specific tag mentioned in the code.
+            Here the div with id ajaxdiv1 will be loaded with the file data.  
+        </p>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/jQuery-ajax.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/CSSExperiment.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hide and Show</title>
+    <link rel="stylesheet" href="CSSExperimentStyleSheet.css" />
+    <link rel="icon" type="image/jpg" href="../../images/jk.png" />
+    <link href='http://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p").hide(1000);
+            });
+            $("#show").click(function () {
+                $("p").show(1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <h2>Hide and Seek! <img src="../../images/winking-emoticon.png" width="10%" height="10%" /></h2>
+        <h3>Demo</h3>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <p>Click on the "Hide" button to make this part disappear.</p>
+        <p>The text and image will fade in and fade out on button click</p>
+        <p>
+            <img src="../../images/tree.jpg" width="100%" height="100%" />
+        </p>
+        
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 9: JQuery Basic</h1>
+        <hr />
+        <h2>About the experiment</h2>
+        
+            This experiment demonstrate the concept of hide and show objects on button click event.<br />
+            Click on the hide button to hide the image and see the div shrink! <br />
+            Again, to see the image again, click the show button and watch it expand!<br />
+        <h2>JQuery: code snippet view</h2>
+        <div class="code-snippet">
+            $(document).ready(function () {
+            <br />
+            $("#hide").click(function () {
+            <br />
+            $("p").hide(1000);
+            <br />
+            });
+            <br />
+            $("#show").click(function () {
+            <br />
+            $("p").show(1000);
+            <br />
+            });
+            <br />
+            });
+            <br />
+        </div>
+        <br />
+        <hr />
+  
+       <h2>Sources:</h2>
+            <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/JQueryBasics.html" target="_blank">View Source</a> <br />
+            <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/CSSExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+ </body>
+</html>

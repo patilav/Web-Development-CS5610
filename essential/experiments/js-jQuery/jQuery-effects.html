@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="jquery-1.11.2.js"></script>
+    <title>JQuery Fade In and Out</title>
+    <link rel="stylesheet" href="CSSExperiment.css">
+</head>
+<body>
+    <h1></h1>
+    <script>
+        $(document).ready(function () {
+            $("#HideButtton").click(function () {
+                $("#div1").fadeOut();
+                $("#div2").fadeOut("slow");
+                $("#div3").fadeOut(3000);
+            });
+            $("#ShowButtton").click(function () {
+                $("#div1").fadeIn();
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            });
+        });
+    </script>
+    <div class="experiment">
+        <h2>Section 1</h2>
+        <div id="div1" style="width:80px;height:80px;background-color:yellow;"></div><br/>
+        <h2>Section 2</h2>
+        <div id="div2" style="width:80px;height:80px;background-color:red;"></div><br/>
+        <h2>Section 3</h2>
+        <div id="div3" style="width:80px;height:80px;background-color:white;"></div> <br />
+        <button id="HideButtton"> Hide all paragraphs!</button>
+        <button id="ShowButtton"> Show all paragraphs!</button>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 11 : JQuery Fade In/Out Effects</h1>
+        <h2>About the experiment</h2>
+        <p>
+            <h4>jQuery Fading Methods</h4>
+            With jQuery you can fade an element in and out of visibility.
+
+            jQuery has the following fade methods:
+            <ul>
+                <li>fadeIn()</li>
+                <li>fadeOut()</li>
+                <li>fadeToggle()</li>
+            </ul>
+            <b>jQuery fadeIn() Method</b> <br />
+            The jQuery fadeIn() method is used to fade in a hidden element.<br />
+            <b>jQuery fadeOut() Method</b>  <br />
+            The jQuery fadeOut() method is used to fade out a visible element.<br />
+            <b>jQuery fadeToggle() Method</b>
+            The jQuery fadeToggle() method toggles between the fadeIn() and fadeOut() methods.<br />
+            If the elements are faded out, fadeToggle() will fade them in.<br />
+            If the elements are faded in, fadeToggle() will fade them out.<br />
+        </p>
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            $(document).ready(function () { <br />
+            $("#HideButtton").click(function () {<br />
+            $("#div1").fadeOut();<br />
+            $("#div2").fadeOut("slow");<br />
+            $("#div3").fadeOut(3000);<br />
+            });<br />
+            $("#ShowButtton").click(function () {<br />
+            $("#div1").fadeIn();<br />
+            $("#div2").fadeIn("slow");<br />
+            $("#div3").fadeIn(3000);<br />
+            });<br />
+            });<br />
+        </div>
+        <p>
+            Here I have used fadeIn and fadeOut effects to manipulate the effects where <br />
+            if given no argument the fadeIn/fadeOut even will occure immediatedly. <br />
+            if given slow as argument the fadeIn/fadeOut even will occure slowly. <br />
+            if given the interval 3000 as argument the fadeIn/fadeOut even will occure slowly after 3000 milliseconds. <br />
+        </p>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/jQuery-effects.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/CSSExperiment.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />   
+     </div>
+</body>
+</html>

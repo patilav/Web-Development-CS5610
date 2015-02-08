@@ -1,0 +1,10 @@
+﻿<h2>Loading from text doc: Lorem Ipsum!</h2>
+<p id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Duis at felis faucibus, tincidunt sapien ac, placerat orci. 
+Nam interdum tellus a tortor tempus, in porttitor massa volutpat. 
+Vestibulum et risus et erat tempus dignissim. Nam consequat metus finibus ligula tempus,
+ id facilisis quam ultricies. Nunc sed leo tortor. Vestibulum fringilla consectetur euismod. 
+ Donec congue urna magna, at vulputate nibh sollicitudin quis. Aliquam in gravida dolor. 
+ Quisque venenatis, orci ac tempus pretium, leo ligula faucibus ex, ut ornare magna metus non augue. 
+ Sed euismod ligula nec velit dictum, et suscipit lacus feugiat. Donec dui tellus, scelerisque quis interdum non, sodales vitae nisl. Nam dapibus sed diam ac suscipit. Proin faucibus nibh in finibus fringilla.
+ </p>

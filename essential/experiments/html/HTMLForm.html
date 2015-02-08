@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML 5 Form Experiment</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+<body>
+    <div class="experiment">
+        <header>
+            <h1>Sign Up!</h1>
+        </header>
+
+        <main>
+            <form action="" method="GET">
+                <fieldset>
+                    <legend>Personal information:</legend>
+                    <table>
+
+                        <tr>
+                            <td>First Name :</td>
+                            <td><input type="text" name="fname" /></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name :</td>
+                            <td><input type="text" name="lname" /></td>
+                        </tr>
+                        <tr>
+                            <td>Sex:</td>
+                            <td>
+                                <input type="radio" name="sex" value="male" checked>Male
+                                <input type="radio" name="sex" value="female">Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Country:</td>
+                            <td>
+                                <input list="country" name="country">
+                                <datalist id="country">
+                                    <option value="India">
+                                    <option value="United States of America">
+                                    <option value="China">
+                                    <option value="Africa">
+                                    <option value="Russia">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth :</td>
+                            <td><input type="date" name="birthday"></td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
+                            <td><input type="email" name="email-id1" /></td>
+                        </tr>
+                        <tr>
+                            <td>Re-enter Email:</td>
+                            <td><input type="email" name="email-id2" /></td>
+                        </tr>
+                        <tr>
+                            <td>Owned vehicles:</td>
+                            <td><input type="number" name="vehicles" min="0"></td>
+                        </tr>
+                        <tr>
+                            <td>Password :</td>
+                            <td><input type="password" name="psw1"></td>
+                        </tr>
+                        <tr>
+                            <td>Re-enter Password:</td>
+                            <td><input type="password" name="psw2"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <button type="submit">SUBMIT</button>
+            </form>
+        </main>
+        <section>
+            <h3>Advertisements</h3>
+            <article>
+                <a href="http://www.buycar.com"> Need a new car? </a> |
+                <a href="http://www.buyhouse.com"> Want to buy a house? </a> |
+                <a href="http://www.getapps.com"> All new  mobile apps! </a>
+            </article>
+            <article></article>
+        </section>
+        <hr />
+        <footer>
+            Copyright (c) 2015 Avanti Patil
+        </footer>
+        <hr />
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 1: HTML5 Form</h1>
+        <h2>About the experiment</h2>
+        <p>
+            HTML 5 provides various new form elements which are frequently used these days.<br />
+            Support for these kind of elements will help to simplify the web development in a way that <br />
+            the developer can concentrate on the program logic rather than the representation and validation of the input data. <br />
+            Following are some of the new form elements:
+            <ul>
+                <li>Date Picker</li>
+                <li>Email</li>
+                <li>Datalist</li>
+                <li>Number</li>
+            </ul>
+            <h4>Date Picker:</h4>
+            The &lt;input type="date"&gt; is used for input fields that should contain a date.
+            Depending on browser support, a date picker can show up in the input field.
+            <h4>Email:</h4>
+            The &lt;input type="email"&gt; is used for input fields that should contain an e-mail address.
+            Depending on browser support, the e-mail address can be automatically validated when submitted.
+            Some smartphones recognize the email type, and adds ".com" to the keyboard to match email input.
+            <h4>Number:</h4>
+            The &lt;input type="number"&gt; is used for input fields that should contain a numeric value.
+            You can set restrictions on the numbers.
+            Depending on browser support, the restrictions can apply to the input field.
+            <h4>Datalist:</h4>
+            The &lt;datalist&gt; element specifies a list of pre-defined options for an &lt;input&gt; element.
+            Users will see a drop-down list of pre-defined options as they input data.
+
+        </p>
+        <h2>HTML 5: code snippet view   </h2>
+        <h3>Date Picker</h3>
+        <div class="code-snippet">
+            &lt;input type="date" name="birthday"/&gt;
+        </div>
+        <h3>Email</h3>
+        <div class="code-snippet">
+            &lt;input type="email" name="email-id1"/&gt;
+        </div>
+        <h3>Datalist</h3>
+        <div class="code-snippet">
+            &lt;input list="country" name="country&gt;
+            &lt;datalist id="country"&gt;
+            &lt;option value="India"&gt;
+            &lt;option value="United States of America"&gt;
+            &lt;option value="China"&gt;
+            &lt;option value="Africa"&gt;
+            &lt;option value="Russia"&gt;
+            &lt;/datalist&gt;
+        </div>
+        <h3>Number</h3>
+        <div class="code-snippet">
+            &lt;input type="number" name="vehicles"&gt;
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLForm.html" target="_blank">View Source</a> <br/>
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+        <a href="https://www.youtube.com/watch?v=wLnFJonGZrY">Prof. Jose Lecture Video</a>
+
+    </div>
+</body>
+</html>

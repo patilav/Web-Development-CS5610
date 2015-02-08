@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>HTML layout</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+    <style>
+        .experiment{
+            width:30%;
+        }
+        img{
+            width:100%;
+        }
+        #header {
+            background-color: brown;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        #footer {
+            text-align: center;
+            padding: 5px;
+            background-color: brown;
+            color: white;
+            clear: both;
+        }
+
+        #nav {
+            line-height: 40px;
+            background-color: #811c1c;
+            height: 100%;
+            width: 20%;
+            float: left;
+            padding: 5px;
+        }
+
+        #section {
+            padding: 15px;
+            width: 70%;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="experiment">
+    <div id="header">
+        <h1>The coffee shop</h1>
+    </div>
+
+    <div id="nav">
+        <b>Locations </b>
+        India<br>
+        China<br>
+        U.S.A.<br>
+    </div>
+
+    <div id="section">
+        <h1>India</h1>
+        <p>
+            India officially the Republic of India is a country in South Asia.
+            It is the seventh-largest country by area, the second-most populous country with over 1.2 billion people,
+            and the most populous democracy in the world.
+        </p>
+        <p>
+            Bounded by the Indian Ocean on the south, the Arabian Sea on the south-west, and the Bay of Bengal on the south-east,
+            it shares land borders with Pakistan to the west;[d] China, Nepal, and Bhutan to the north-east;
+            and Burma and Bangladesh to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives;
+            in addition, India's Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.
+        </p>
+        <img src="../../images/coffee.jpg" alt="Coffee picture" />
+    </div>
+
+    <div id="footer">
+        Copyright © 2015 - Avanti Patil
+    </div>
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 2: HTML Layout</h1>
+        <h2>About the experiment</h2>
+        When it comes to arrenging the layouts on the page, using a table format is a bad practice.
+        Instead we can use the well formatted divs which can be styled using css.
+        
+        <h2>HTML Layout: code snippet view</h2>
+        <h4>HTML Header</h4>
+        <div class="code-snippet">
+            #header {
+            background-color: brown;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            }
+        </div>
+        <h4>HTML Footer</h4>
+        <div class="code-snippet">
+            #footer {
+            text-align: center;
+            padding: 5px;
+            background-color: brown;
+            color: white;
+            clear: both;
+            }
+        </div>
+        <h4>HTML Navigation</h4>
+        <div class="code-snippet">
+            #nav {
+            line-height: 40px;
+            background-color: #811c1c;
+            height: 100%;
+            width: 20%;
+            float: left;
+            padding: 5px;
+            }
+        </div>
+        <h4>HTML Section</h4>
+        <div class="code-snippet">
+            #section {
+            padding: 15px;
+            width: 70%;
+            float: left;
+            }
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLSections.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+    </div>
+</body>
+</html>
+

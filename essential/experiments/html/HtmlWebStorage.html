@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML Local Storage</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+    <script>
+    function clickCounter() {
+        if (typeof (Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+                sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+            } else {
+                sessionStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "Your current hit count is -> " + sessionStorage.clickcount + " in this session.";
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <p><button onclick="clickCounter()" type="button">Hit Like!</button></p>
+        <div id="result"></div>
+    </div>
+    <div class="experiment-explaination">
+        <h1>HTML 5: The sessionStorage Object</h1>
+        <h2>About the experiment</h2>
+        The sessionStorage object is equal to the localStorage object, except that it stores the data for only one session. The data is deleted when the user closes the browser window.
+        The example counts the number of times a user has clicked a button, in the current session:
+
+        <h2>HTML code snippet view</h2>
+        <p>Click the button to see the counter increase.</p>
+        <p>Close the browser tab (or window), and try again, and the counter will be reset</p>
+        <div class="code-snippet">
+            function clickCounter() { <br />
+            if (typeof (Storage) !== "undefined") {<br />
+            if (sessionStorage.clickcount) {<br />
+            sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;<br />
+            } else {<br />
+            sessionStorage.clickcount = 1;<br />
+            }<br />
+            document.getElementById("result").innerHTML = "Your current hit count is -> " + sessionStorage.clickcount + " in this session.";<br />
+            } else {<br />
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";<br />
+            }<br />
+            }<br />
+
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/html/HtmlWebStorage.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+
+    </div>
+
+</body>
+</html>

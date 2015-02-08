@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-1.11.2.js"></script>
+    <title>jQuery Traversing - Filtering</title>
+    <link rel="stylesheet" href="CSSExperiment.css">
+    <script>
+        $(document).ready(function () {
+            $("p").filter(".intro").css("background-color", "yellow");
+            $("p").filter(".temp").css("background-color", "white");
+        });
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <h2>It's Magic Highlight! :D </h2>
+        <p class="temp">I have found the magic code!!</p>
+        <p class="intro">It's called JQuery.</p>
+        <p class="intro">I love JQuery.</p>
+        <p class="temp">My expriments will demonstrate the same.</p>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 15 : jQuery Traversing - Filtering</h1>
+        <h2>About the experiment</h2>
+        <p>
+            <h4>jQuery Traversing - Filtering</h4>
+            Narrow Down The Search For Elements
+            The three most basic filtering methods are first(), last() and eq(), which allow you to select a specific element based on its position in a group of elements.
+
+            Other filtering methods, like filter() and not() allow you to select elements that match, or do not match, a certain criteria.
+        </p>
+        <p>
+            <b>jQuery first() Method</b> <br />
+            The first() method returns the first element of the selected elements.
+        </p>
+        <p>
+            <b>jQuery last() Method</b><br />
+            The last() method returns the last element of the selected elements.
+        </p>
+        <p>
+            <b>jQuery eq() method</b><br />
+            The eq() method returns an element with a specific index number of the selected elements.
+            The index numbers start at 0, so the first element will have the index number 0 and not 1.
+        </p>
+        <p>
+            <b>jQuery filter() Method</b><br />
+            The filter() method lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned.
+        </p>        
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            $(document).ready(function () { <br />
+            $("p").filter(".intro").css("background-color", "yellow");<br />
+            $("p").filter(".temp").css("background-color", "white");<br />
+            });<br />
+        </div>
+        <p>
+            Here I have used the filter function to change the css for the particular part of &lt;p&gt; <br />
+            e.g. 
+            For "intro" I have changed the background color to yellow after loading the page <br/>
+            For "temp" I have changed the background color to white after loading the page <br />
+        </p>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/jQuery-filtering.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/CSSExperiment.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+    </div>
+</body>
+</html>

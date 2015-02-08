@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/js-jQuery/story.txt				What is Next?
+HTMLForm.html															Html 5 form samples
+HTMLSections.html														Html Sections
+HtmlLocation.html														Html Location
+HtmlRange.html															Html Range
+HtmlWebStorage.html														Html Web Storage

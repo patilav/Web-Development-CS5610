@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-1.11.2.js"></script>
+    <title>JQuery Chanining</title>
+    <link rel="stylesheet" href="CSSExperiment.css">
+  <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#p1").css("color", "blue")
+                    .slideUp(2000)
+                    .slideDown(2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <p id="p1">I am moving Up and Down! :P </p>
+        <button>Click Here to see the chaining Effect.</button>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 13 : JQuery Chaining</h1>
+        <h2>About the experiment</h2>
+        <p>
+            With jQuery, you can chain together actions/methods.
+            Chaining allows us to run multiple jQuery methods (on the same element) within a 
+            single statement.
+        </p>
+        <p>
+            However, there is a technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s).
+            Tip: This way, browsers do not have to find the same element(s) more than once.
+            To chain an action, you simply append the action to the previous action.
+       </p>
+        <p>
+            <b>Tip:</b> When chaining, the line of code could become quite long. 
+            However, jQuery is not very strict on the syntax; you can format it like you want, including line breaks and indentations.
+        </p>
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            $(document).ready(function () { <br />
+            $("button").click(function () {<br />
+            $("#p1").css("color", "blue")<br />
+            .slideUp(2000)<br />
+            .slideDown(2000);<br />
+            });<br />
+            });<br />
+        </div>
+        <p> 
+            Here in case of chaining the slideUp and slideDown get called one after the another.. 
+            Hence creating a demo where the order of the tasks matter.
+            Where slideUp will make p1 to move upwards and slideDown will make p1 to move downwards
+        </p>
+            <h2>Sources:</h2>
+            <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/jQuery-chaining.html" target="_blank">View Source</a> <br />
+            <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/CSSExperiment.css" target="_blank">View CSS</a>
+            <h2>References</h2>
+            <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+        </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-1.11.2.js"></script>
+    <title>JQuery Menu Bar</title>
+    <link rel="stylesheet" href="CSSExperiment.css">
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="experiment">
+        <h2>Menu Bar</h2>
+        <div id="flip">Click to toggle Menu Bar</div>
+        <div id="panel"><a href="">Home</a> | <a href="">Services</a> | <a href="">Products</a> | <a href="">About us</a> | <a href="">Contact us</a></div>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 12 : JQuery Menu</h1>
+        <h2>About the experiment</h2>
+        <h4>jQuery Effects - Sliding</h4>
+        <p>
+            jQuery Sliding Methods
+            With jQuery you can create a sliding effect on elements.
+            jQuery has the following slide methods:
+            <ol>
+                <li>slideDown()</li>
+                <li>slideUp()</li>
+                <li>slideToggle()</li>
+            </ol>
+        </p>
+        <p>
+            <b>jQuery slideDown() Method</b> <br />
+            The jQuery slideDown() method is used to slide down an element.
+            
+        </p>
+        <p>
+            <b>jQuery slideUp() Method</b><br />
+            The jQuery slideUp() method is used to slide up an element.
+        </p>
+        <p>
+            <b>jQuery slideToggle() Method</b><br />
+            The jQuery slideToggle() method toggles between the slideDown() and slideUp() methods.
+            If the elements have been slid down, slideToggle() will slide them up.
+            If the elements have been slid up, slideToggle() will slide them down.
+        </p>
+        <p>
+            For all the above functions, the optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+            The optional callback parameter is a function to be executed after the sliding completes.
+        </p>
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            $(document).ready(function () { <br />
+            $("#flip").click(function () { <br />
+            $("#panel").slideToggle("slow"); <br />
+            }); <br />
+            }); <br />
+        </div>
+        <p>
+            In above code I have created a menu bar which can be toggled between slide down and slide; up on button click event.
+        </p>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/jQuery-slidedown.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/js-jQuery/CSSExperiment.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+    </div>
+</body>
+</html>

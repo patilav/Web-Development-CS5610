@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML 5 Form Experiment</title>
+    <link rel="stylesheet" href="CSSExperimentStyleSheet.css">
+</head>
+<body>
+    <div class="experiment">
+        <header>
+            <h1>Sign Up!</h1>
+        </header>
+
+        <main>
+            <form action="" method="GET">
+                <fieldset>
+                    <legend>Personal information:</legend>
+                    <table>
+
+                        <tr>
+                            <td>First Name :</td>
+                            <td><input type="text" name="fname" /></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name :</td>
+                            <td><input type="text" name="lname" /></td>
+                        </tr>
+                        <tr>
+                            <td>Sex:</td>
+                            <td>
+                                <input type="radio" name="sex" value="male" checked>Male
+                                <input type="radio" name="sex" value="female">Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Country:</td>
+                            <td>
+                                <input list="country" name="country">
+                                <datalist id="country">
+                                    <option value="India">
+                                    <option value="United States of America">
+                                    <option value="China">
+                                    <option value="Africa">
+                                    <option value="Russia">
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth :</td>
+                            <td><input type="date" name="birthday"></td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
+                            <td><input type="email" name="email-id1" /></td>
+                        </tr>
+                        <tr>
+                            <td>Re-enter Email:</td>
+                            <td><input type="email" name="email-id2" /></td>
+                        </tr>
+                        <tr>
+                            <td>Owned vehicles:</td>
+                            <td><input type="number" name="vehicles" min="0"></td>
+                        </tr>
+                        <tr>
+                            <td>Password :</td>
+                            <td><input type="password" name="psw1"></td>
+                        </tr>
+                        <tr>
+                            <td>Re-enter Password:</td>
+                            <td><input type="password" name="psw2"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <button type="submit">SUBMIT</button>
+            </form>
+        </main>
+        <section>
+            <h3>Advertisements</h3>
+            <article>
+                <a href="http://www.buycar.com" target="_blank"> Need a new car? </a> |
+                <a href="http://www.buyhouse.com" target="_blank"> Want to buy a house? </a> |
+                <a href="http://www.getapps.com" target="_blank"> All new  mobile apps! </a>
+            </article>
+            <article></article>
+        </section>
+        <hr />
+        <footer>
+            Copyright (c) 2015 Avanti Patil
+        </footer>
+        <hr />
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 5: CSS Basics </h1>
+        <h2>About the experiment</h2>
+        <p>
+            We use CSS to control the style and layout of multiple Web pages all at once.
+            Some of the features which I have used in this experiment are described in detail below:
+            <h4>background-color:</h4>
+            The background-color property specifies the background color of an element.
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                background: #000000;
+            </div>
+            <h4>background-image:</h4>
+            The background-image property specifies an image to use as the background of an element.
+            By default, the image is repeated so it covers the entire element.
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                background-image: url("paper.gif");
+            </div>
+
+            <h4>background</h4>
+            All properties for background can be set using single line show like below format.
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                background: color position/size repeat origin clip attachment image|initial|inherit;
+            </div>
+
+            <h4>CSS Float</h4>
+            With CSS float, an element can be pushed to the left or right, allowing other elements to wrap around it.
+            Float is often used with images, but it is also useful when working with layouts.
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                float: left;
+            </div>
+            <h4>font-family</h4>
+            The font family of a text is set with the font-family property.
+            The font-family property should hold several font names as a "fallback" system.
+             If the browser does not support the first font, it tries the next font.
+            Start with the font you want, and end with a generic family, to let the browser pick a similar font
+            in the generic family, if no other fonts are available.
+            Note: If the name of a font family is more than one word, it must be in quotation marks, like: "Times New Roman".
+            More than one font family is specified in a comma-separated list
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                font-family: "Times New Roman", Times, serif;
+            </div>
+
+            <h4>Text Color</h4>
+            The color property is used to set the color of the text.
+            With CSS, a color is most often specified by:<br />
+            a HEX value - like "#ff0000" <br />
+            an RGB value - like "rgb(255,0,0)"<br />
+            a color name - like "red"<br />
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                color: blue;
+            </div>
+            <h4>Text Alignment</h4>
+            The text-align property is used to set the horizontal alignment of a text.
+            Text can be centered, or aligned to the left or right, or justified.
+            When text-align is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers).
+            <h5>code-snippet</h5>
+            <div class="code-snippet">
+                text-align: center;
+            </div>
+       <h2>Source code</h2>
+            <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/CSSBasics.html" target="_blank">View Source</a> <br />
+            <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/CSSExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/html/HTMLForm.html" target="_blank">Experiment 1 - Avanti Patil Web Dev</a> <br />
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CSS Transformations</title>
+    <link rel="stylesheet" href="CSSTransformations.css">
+ <style>
+ 
+ </style>
+</head>
+<body>
+    <div class="experiment">
+        <div class="experiment2">
+            <h5>Rotate 60 Degree</h5>
+        </div>
+        <div class="experiment3">
+            <h5>Rotate 120 Degree</h5>
+        </div>
+       
+        <div class="experiment4">
+            <h5>Animation</h5>
+        </div>
+        </div>
+   
+    <div class="experiment-explaination">
+        <h1>Experiment 6: CSS Transformations</h1>
+        <h2>About the experiment</h2>
+        The CSS transform property allows you to visually manipulate element, literally transforming their appearance.
+         <br />
+        <h2>HTML Geolocation: code snippet view</h2>
+        <h4>Rotate Transformation</h4>
+        With the rotate() method, the element rotates clockwise at a given degree. Negative values are allowed and rotates the element counter-clockwise.
+        <div class="code-snippet">
+            -ms-transform: rotate(30deg); /* IE 9 */ <br />
+            -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */ <br />
+            transform: rotate(30deg); <br />
+        </div>
+        <h4>Animation of the transformation </h4>
+        With the translate() method, the element moves from its current position, depending on the parameters given for the left (X-axis) and the top (Y-axis) position:
+        <div class="code-snippet">
+            -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */<br />
+            animation: mymove 5s infinite;<br />
+        
+            /* Chrome, Safari, Opera */<br />
+            @-webkit-keyframes mymove {<br />
+                50% {<br />
+                    -webkit-transform: rotate(180deg);<br />
+                }<br />
+            }<br />
+
+            /* Standard syntax */<br />
+            @keyframes mymove {<br />
+                50% { <br />
+                    transform: rotate(180deg); <br />
+                }<br />
+            } <br />
+
+        </div>
+        <h4>Not all browsers support 2D or 3D transformations 
+        Below are the details about most used brower support: </h4> 
+          
+        <h4>2D Transforms</h4>
+        <table class="code-snippet">
+            <thead>
+                <tr>
+                    <th class="chrome"><span>Chrome</span></th>
+                    <th class="safari"><span>Safari</span></th>
+                    <th class="firefox"><span>Firefox</span></th>
+                    <th class="opera"><span>Opera</span></th>
+                    <th class="ie"><span>IE</span></th>
+                    <th class="android"><span>Android</span></th>
+                    <th class="iOS"><span>iOS</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="yep">Any</td>
+                    <td class="yep">3.1+</td>
+                    <td class="yep">3.5+</td>
+                    <td class="yep">10.5+</td>
+                    <td class="yep">10+</td>
+                    <td class="yep">?</td>
+                    <td class="yep">At least 4</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>3D Transforms</h4>
+        <table class="code-snippet">
+            <thead>
+                <tr>
+                    <th><span>Chrome</span></th>
+                    <th><span>Safari</span></th>
+                    <th><span>Firefox</span></th>
+                    <th><span>Opera</span></th>
+                    <th><span>IE</span></th>
+                    <th><span>Android</span></th>
+                    <th><span>iOS</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >10+</td>
+                    <td >4+</td>
+                    <td >12+</td>
+                    <td >none</td>
+                    <td >10+</td>
+                    <td >?</td>
+                    <td >5?</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/CSSTransformations.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/CSSTransformations.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+        <a href="http://css-tricks.com/almanac/properties/t/transform/">css-tricks.com</a></div>   
+</body>
+</html>

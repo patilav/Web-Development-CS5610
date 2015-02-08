@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/js-jQuery/story.txt				What is Next?
+jQuery-effects.html														JQuery Fade In/Out Effects
+jQuery-slidedown.html													JQuery Menu
+jQuery-chaining.html													JQuery Chaining
+jQuery-ajax.html														JQuery and AJAX Content change
+jQuery-filtering.html													jQuery Traversing - Filtering

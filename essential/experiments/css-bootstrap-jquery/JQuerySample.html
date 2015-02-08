@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="CSSExperimentStyleSheet.css">
+    <style>
+        .experiment-block {
+            background-color: #1c0f80;
+            width: 100px;
+            border: 2px black;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <div class="experiment">
+        <h2>Yay 2D Animation!!</h2>
+        <button id="go">Click me to animate the bar below! </button> <br /> <br />
+            <div class="experiment-block" id="block">GO!</div>
+        <script>
+            $("#go").click(function () {
+                $("#block").animate({
+                    opacity: 0.6,
+                    marginLeft: "0.8in",
+                    fontSize: "2em",
+                    width: "50%",
+                    
+                }, 1500);
+            });
+        </script>
+
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 10: 2D Animation using JQuery</h1>
+        <h4>About this experimet</h4>
+            <p>
+            This experiment showcases simple JQuery animation which can be used anywhere to make the page attractive.
+            I have animated the changes in size, opacity and border of an element with class name "experiment-block"
+            after clicking on "GO" button<br />
+            <br />
+    <h4>Jquery code snippet:</h4>
+                <div class="code-snippet">
+                &lt;script&gt;{ <br />
+                    $("#go").click(function () { <br />
+                    $("#block").animate({ <br />
+                {{ <br />
+                    opacity: 0.6,{ <br />
+                    marginLeft: "0.8in",{ <br />
+                    fontSize: "2em",{ <br />
+                    width: "50%",{ <br />
+                    }, 1500);{ <br />
+                });{ <br />
+                    &lt;/script&gt;{ <br /></div>
+                <h2>Source code</h2>
+                <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/JQuerySample.html" target="_blank">View Source</a> <br />
+                <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/CSSExperimentStyleSheet.css" target="_blank">View CSS</a>
+                <h2>References</h2>
+                <a href="http://www.w3schools.com/"> www.w3schools.com </a><br />
+       
+    </div>
+  
+</body>
+</html>
