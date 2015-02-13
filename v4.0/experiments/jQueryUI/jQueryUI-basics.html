@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery Basics</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/ExperimentStyleSheet.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin: 5px;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#sortable").sortable({
+                revert: true
+            });
+            $("div.dragme").draggable({
+                connectToSortable: "#sortable",
+                helper: "clone",
+                revert: "valid",
+                grid: [20, 20],
+                start: function () { console.log("Drag start") },
+                stop: function () { console.log("Drag stop") }
+            });
+            $(".header").html("Adjustable Menu Bar");
+            $(".resizeme").resizable();
+        })
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <h1 class="header"></h1>
+        Hi, Avanti!
+        <ul id="sortable">
+            <li class="ui-state-default">Home</li>
+            <li class="ui-state-default">Products</li>
+            <li class="ui-state-default">Services</li>
+            <li class="ui-state-default">About Us</li>
+            <li class="ui-state-default">Contact Us</li>
+        </ul>
+        <div class="dragme">
+            <b>MyAccount</b>
+        </div>
+        Drag and drop above link to create a new shortcut! <br />
+        Enter your details in Resizable TextArea: <br />
+        <div class="resizeme">
+            <textarea></textarea>
+        </div>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 16: JQuery UI Basics : Sortable and Draggable</h1>
+        <h2>Draggable</h2>
+        <h3>Functionality:</h3>
+        <p>
+            It allows you to drag elements using the mouse.
+            Enable draggable functionality on any DOM element. Move the draggable object by clicking on it with the mouse and dragging it anywhere within the viewport.
+        </p>
+        <p>
+            <h4>Options</h4>
+        <p>
+            <b>grid: Array</b> <br />
+            Snaps the dragging helper to a grid, every x and y pixels. The array must be of the form [ x, y ].
+        </p>
+        <p>
+            <b>connectToSortableType: Selector</b> <br />
+            Allows the draggable to be dropped onto the specified sortables. If this option is used, a draggable can be dropped onto a sortable list and then becomes part of it. Note: The helper option must be set to "clone" in order to work flawlessly. Requires the jQuery UI Sortable plugin to be included.
+        </p>
+        <p>
+            <h4>Events </h4>
+            <b>start:  Type: dragstart <br />
+            start( event, ui )</b> <br />
+            Triggered when dragging starts.<br />
+            event (Type: Event) <br />
+            ui (Type: Object) <br />
+            helper<br />
+            Type: jQuery<br />
+            The jQuery object representing the helper that's being dragged. <br />
+            position<br />
+            Type: Object<br />
+            Current CSS position of the helper as { top, left } object.<br />
+            offset<br />
+            Type: Object<br />
+            Current offset position of the helper as { top, left } object.<br />
+            <b>
+                stop: Type: dragstop <br />
+                stop( event, ui )
+            </b> <br />
+            Triggered when dragging starts.<br />
+            event (Type: Event) <br />
+            ui (Type: Object) <br />
+            helper<br />
+            Type: jQuery<br />
+            The jQuery object representing the helper that's being dragged. <br />
+            position<br />
+            Type: Object<br />
+            Current CSS position of the helper as { top, left } object.<br />
+            offset<br />
+            Type: Object<br />
+            Current offset position of the helper as { top, left } object.<br />
+        </p>
+        <h2>Resizable</h2>
+        <h3>Functionality:</h3>
+       <p>
+            It allows you to Change the size of an element using the mouse.
+            Enable any DOM element to be resizable. With the cursor grab the right or bottom border and drag to the desired width or height.
+        </p>
+        <h2>Sortable</h2>
+        <h3>Functionality:</h3>
+        <p>
+            Reorder elements in a list or grid using the mouse.
+            nable a group of DOM elements to be sortable.
+            Click on and drag an element to a new spot within the list, and the other items will adjust to fit. By default, sortable items share draggable properties.
+        </p>
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            <p>
+                $(function () {<br />
+                $("#sortable").sortable({                //this enables the sorting <br /> 
+                revert: true<br /> 
+                });<br />
+                $("div.dragme").draggable({             //this enables the dragging event<br />
+                connectToSortable: "#sortable",<br />
+                helper: "clone",<br />
+                revert: "valid",<br />
+                grid: [20, 20],<br />
+                start: function () { console.log("Drag start") }, <br />
+                stop: function () { console.log("Drag stop") } <br />
+                });<br /> 
+                $(".header").html("Adjustable Menu Bar"); <br />
+                $(".resizeme").resizable();                   //this enables the resize ability<br />
+                })<br />
+            </p>
+        </div>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/jQueryUI-basics.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/jquery-ui.css" target="_blank">View JQuery CSS</a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery-ui.js" target="_blank">View JQuery UI</a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery.js" target="_blank">View JQuery</a><br />
+        <h2>References</h2>
+        <a href="http://jqueryui.com/"> JQuery UI </a><br />
+
+    </div>
+</body>
+</html>
