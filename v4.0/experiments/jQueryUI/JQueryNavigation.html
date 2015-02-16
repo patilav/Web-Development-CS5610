@@ -1,0 +1,191 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Navigation</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/ExperimentStyleSheet.css">
+    <script>
+        $(function () {
+            $("#tabs").tabs({
+                event: "mouseover"
+            });
+            $("#accordion").accordion({
+                event: "click hoverintent"
+            });
+        });
+        $.event.special.hoverintent = {
+            setup: function () {
+                $(this).bind("mouseover", jQuery.event.special.hoverintent.handler);
+            },
+            teardown: function () {
+                $(this).unbind("mouseover", jQuery.event.special.hoverintent.handler);
+            },
+            handler: function (event) {
+                var currentX, currentY, timeout,
+                  args = arguments,
+                  target = $(event.target),
+                  previousX = event.pageX,
+                  previousY = event.pageY;
+
+                function track(event) {
+                    currentX = event.pageX;
+                    currentY = event.pageY;
+                };
+
+                function clear() {
+                    target
+                      .unbind("mousemove", track)
+                      .unbind("mouseout", clear);
+                    clearTimeout(timeout);
+                }
+
+                function handler() {
+                    var prop,
+                      orig = event;
+
+                    if ((Math.abs(previousX - currentX) +
+                        Math.abs(previousY - currentY)) < 7) {
+                        clear();
+
+                        event = $.Event("hoverintent");
+                        for (prop in orig) {
+                            if (!(prop in event)) {
+                                event[prop] = orig[prop];
+                            }
+                        }
+                        // Prevent accessing the original event since the new event
+                        // is fired asynchronously and the old event is no longer
+                        // usable (#6028)
+                        delete event.originalEvent;
+
+                        target.trigger(event);
+                    } else {
+                        previousX = currentX;
+                        previousY = currentY;
+                        timeout = setTimeout(handler, 100);
+                    }
+                }
+
+                timeout = setTimeout(handler, 100);
+                target.bind({
+                    mousemove: track,
+                    mouseout: clear
+                });
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="experiment">
+        <h1>Vertical Navigation</h1>
+        <div id="accordion">
+            <h3>Home</h3>
+            <div>
+                <p>When Oh, a loveable misfit from another planet, lands on Earth and finds himself on the run from his own people, he forms an unlikely friendship with an adventurous girl named Tip who is on a quest of her own. Through a series of comic adventures with Tip, Oh comes to understand that being different and making mistakes is all part of being human. And while he changes her planet and she changes his world, they discover the true meaning of the word HOME.</p>
+            </div>
+            <h3>Products</h3>
+            <div>
+                <p>
+                    I need to start this article by qualifying what makes an amazing About Us page. The reason for this is that some About Us pages look amazing but have terrible content whilst others look terrible but grab your attention immediately. The list I have compiled here are based on the fact that they.
+                </p>
+            </div>
+            <h3>About us</h3>
+            <div>
+                <p>
+                    A good About Us page is nothing without…
+                    It doesn’t matter how good your About Us page is if you don’t have your own domain name and web host.
+                    If you are using a free blog like Tumblr or Blogger you are growing a brand that you don’t fully own or control. This is a huge shame.
+                </p>
+                <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                </ul>
+            </div>
+            </div>
+            <h1>Horizontal Navigation</h1>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Home</a></li>
+                    <li><a href="#tabs-2">Products</a></li>
+                    <li><a href="#tabs-3">About us</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <p>When Oh, a loveable misfit from another planet, lands on Earth and finds himself on the run from his own people, he forms an unlikely friendship with an adventurous girl named Tip who is on a quest of her own. Through a series of comic adventures with Tip, Oh comes to understand that being different and making mistakes is all part of being human. And while he changes her planet and she changes his world, they discover the true meaning of the word HOME.</p>
+                </div>
+                <div id="tabs-2">
+                    <p>It seemed like such a great idea: You found the ideal niche market, complete with potential customers by the dozens and profit potential galore. Maybe you already found the ultimate location, or you've put together a stellar e-commerce site that would even put Amazon.com to shame.
+                    There's just one problem. You haven't the foggiest idea where to find all the products you need in order to stock your shelves.
+                    Don't be dismayed. This scenario happens time and again with new entrepreneurs, and it's understandable. Even if you come up with a brilliant idea of a product you want to sell, there's still the tiny detail of finding the actual product. You want to sell XYZ, but you're wondering, "Where exactly can I get a supply of XYZ to sell-and get it for a fair price?"</p>
+
+                </div>
+                <div id="tabs-3">
+                    <p>
+                        Something that I have wanted to do for a long time is take a look at the web’s best About Us pages.
+                        Why? Because a good About Us page is very hard to come by.
+                        Normally they are a boring, self-serving mix of me me me and us us us. But a they are so vital to your business. In fact, its usually the first place people look before they start to take you seriously. Get it wrong and you could be turning people off without even knowing it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    <div class="experiment-explaination">
+        <h1>Experiment 19: Jquery navigation</h1>
+        <p>jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice</p>
+        <h2>About this experiment </h2>
+        <p>This experiment demonstrates the different type of readymade navigations provided by the JQuery UI
+        </p>
+        <p>Two methods used here are
+            <b>
+                <ol>
+                    <li>accordion</li>
+                    <li>tabs</li>
+                </ol>
+            </b>
+        </p>
+
+        <h2>
+            accordion
+        </h2>
+
+        <p>
+            Displays collapsible content panels for presenting information in a limited amount of space.
+            Click headers to expand/collapse content that is broken into logical sections, much like tabs. Optionally, toggle sections open/closed on mouseover.
+            The underlying HTML markup is a series of headers (H3 tags) and content divs so the content is usable without JavaScript.
+        </p>
+
+        <div class="code-snippet">
+            $("#accordion").accordion({
+            event: "click hoverintent"
+            });
+         </div>
+        <h2>
+            tabs
+        </h2>
+
+        <p>
+            A single content area with multiple panels, each associated with a header in a list.
+            Toggle sections open/closed on mouseover with the event option. The default value for event is "click."
+        </p>
+
+        <div class="code-snippet">
+            $("#tabs").tabs({
+            event: "mouseover"
+            });
+
+        </div>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/jQueryNavigation.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/jquery-ui.css" target="_blank">View JQuery CSS</a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery-ui.js" target="_blank">View JQuery UI</a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery.js" target="_blank">View JQuery</a><br />
+        <h2>References</h2>
+        <a href="http://jqueryui.com/"> JQuery UI </a><br />
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple product Library</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ProductsApp.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    
+    
+</head>
+<body ng-app="ProductsApp">
+        <div ng-controller="ProductsController" class="container">
+            <h1>Experiment 20: Bootstrap Basics</h1>
+            <h2>Products Stock</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Year Released</th>
+                        <th>Rating</th>
+                        <th>Description</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th><input ng-model="product.name" class="form-control" /></th>
+                        <th><input ng-model="product.year" class="form-control" /></th>
+                        <th><input ng-model="product.rating" class="form-control" /></th>
+                        <th><input ng-model="product.description" class="form-control" /></th>
+                        <th>
+                            <button ng-click="updateProduct()" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </button>
+                            <button ng-click="addProduct()" class="btn btn-success">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products">
+                        <td>{{product.name}}</td>
+                        <td>{{product.year}}</td>
+                        <td>{{product.rating}}</td>
+                        <td>{{product.description}}</td>
+                        <td>
+                            <button ng-click="selectProduct(product)" class="btn btn-warning">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                            <button ng-click="removeProduct(product)" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>About the experiment</h2>
+            <p>
+                <h3>Why AngularJS?</h3>
+                HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
+                <h3>Alternatives</h3>
+                Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of these address the root problem that HTML was not designed for dynamic views.
+                <h3>Extensibility</h3>
+                AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs. Read on to find out how.
+                <br />
+                <h3>Example:</h3>
+                There are many ways to structure the code for an application. For Angular apps, we encourage the use of the Model-View-Controller (MVC) design pattern to decouple the code and to separate concerns.
+                In Angular, the view is a projection of the model through the HTML template. This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
+                The view component is constructed by Angular from this template:
+                <h5>Code snippet</h5>
+            <p class="alert-warning">
+                
+            &lt;html ng-app="phonecatApp"&gt;<br />
+            &lt;head&gt;<br />
+            ...<br />
+            &lt;script src="bower_components/angular/angular.js"&gt;&lt;/script&gt;<br />
+            &lt;script src="js/controllers.js"&gt;&lt;/script&gt;<br />
+            &lt;/head&gt;<br />
+            &lt;body ng-controller="PhoneListCtrl"&gt;<br />
+            <br />
+            &lt;ul&gt;<br />
+            &lt;li ng-repeat="phone in phones"&gt;<br />
+            &lt;span&gt;{{phone.name}}&lt;/span&gt;<br />
+            &lt;p&gt;{{phone.snippet}}&lt;/p&gt;<br />
+            &lt;/li&gt;<br />
+            &lt;/ul&gt;<br />
+            <br />
+            &lt;/body&gt;<br />
+            &lt;/html&gt;<br />
+            </p>
+            <hr />
+
+            <h2>Source code</h2>
+            <a href="../../fileview/Default.aspx?~/experiments/css-bootstrap-jquery/angular-basics.html" target="_blank">View Source</a> <br />
+            <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/bootstrap.css" target="_blank">View Bootstrap CSS</a><br />
+            <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/angular.min.js" target="_blank">View angular js</a><br />
+
+            <h2>References</h2>
+            <a href="https://angularjs.org/"> www.angularjs.org</a><br />
+    </div>
+</body>
+</html>

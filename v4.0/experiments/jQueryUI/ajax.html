@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ajax Basics</title>
+    <link rel="stylesheet" href="css/ExperimentStyleSheet.css">
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#getMovies").click(function () {
+                var title = $("#title").val();
+                $.ajax({
+                    url: "http://www.myapifilms.com/imdb?title="+title+"&format=JSONP&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=N&exactFilter=0&limit=1&lang=en-us&actors=N&biography=0&trailer=0&uniqueName=0&filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0&moviePhotos=N&movieVideos=N",
+                    dataType: "jsonp",
+                    success: displayMovies
+                });
+            })
+        });
+        function displayMovies(movies) {
+            var ul = $("#movies");
+            ul.empty();
+            for (var m in movies) {
+                var movie = movies[m];
+                var title = movie.title;
+                console.log(title);
+                var urlPoster = movie.urlPoster;
+                var plot = movie.plot;
+                var li = $("<li>").append(title);
+                $("<p>").append(plot).appendTo(li);
+                ul.append(li);
+                $("<img>").attr("src", urlPoster).appendTo(li);
+            }
+        }
+    </script>
+  
+</head>
+<body>
+    <div class="experiment">
+        <h1>Find your Favorite Movies here!</h1>
+        <input id="title" placeholder="Title" />
+        <button id="getMovies">Get Movie</button>
+        <ul id="movies"></ul>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 17: Loading data with AJAX and external web API</h1>
+        <h2>About this experiment</h2>
+        <h3>AJAX</h3>
+        <p>
+            AJAX is an acronym standing for Asynchronous JavaScript and XML and this technology help us to load data from the server without a browser page refresh.
+            JQuery is a great tool which provides a rich set of AJAX methods to develope next generation web application.
+            <b>Syntax:</b>
+            <br />
+            Here is the simple syntax for load() method:<br />
+            <div class="code-snippet">
+                [selector].load( URL, [data], [callback] );
+            </div>
+            <br />
+            Here is the description of all the parameters:<br />
+            URL: The URL of the server-side resource to which the request is sent. It could be a CGI, ASP, JSP, or PHP script which generates data dynamically or out of a database.<br />
+            data: This optional parameter represents an object whose properties are serialized into properly encoded parameters to be passed to the request. If specified, the request is made using the POST method. If omitted, the GET method is used.<br />
+            callback: A callback function invoked after the response data has been loaded into the elements of the matched set. The first parameter passed to this function is the response text recieved from the server and second parameter is the status code.<br />
+        </p>
+        <h2> About JSONP</h2>
+        <p>Basically, you're not allowed to request JSON data from another web service via AJAX due to CORS. AJAX allows you to fetch data after a page has already loaded, and then execute some code/call a function once it returns. We can't use AJAX but we are allowed to inject
+        </p>
+        &lt;script&gt;
+            tags into our own page and those are allowed to reference scripts hosted at other domains.
+        Usually you would use this to include libraries from a CDN such as jQuery. However, we can abuse this and use it to fetch data instead! JSON is already valid JavaScript (for the most part), but we can't just return JS in our script file, because we have no way of knowing when the script/data has finished loading and we have no way of accessing it unless it's assigned to a variable or passed to a function. So what we do instead is tell the web service to call a function on our behalf when it's ready.
+        For example, we might request some data from a stock exchange API, and along with our usual API parameters, we give it a callback, like callThisWhenReady. The web service then wraps the data with our function and returns it like this: callThisWhenReady({...data...}). Now as soon as the script loads, your browser will try to execute it (as normal), which in turns calls our arbitrary function and feeds us the data we wanted.
+        Tt works much like a normal AJAX request except instead of calling an anonymous function, we have to use named functions.
+        jQuery actually supports this seemlessly for you by creating a uniquely named function for you and passing that off, which will then in turn run the code you wanted.
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            &lt;script&gt;<br />
+                $(function () { <br />
+                    $("#getMovies").click(function () {<br />
+                        var title = $("#title").val();<br />
+                        $.ajax({<br />
+                            url: "http://www.myapifilms.com/imdb?title=" + title + "&format=JSONP&aka=0&business=0&seasons=0&
+            seasonYear=0&technical=0&filter=N&exactFilter=0&limit=1&lang=en-us&actors=N&biography=0&trailer=0&uniqueName=0
+            &filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0
+            &moviePhotos=N&movieVideos=N",<br />
+                            dataType: "jsonp",<br />
+                            success: displayMovies<br />
+                        });<br />
+                    })<br />
+                });<br />
+                function displayMovies(movies) {<br />
+                    var ul = $("#movies");<br />
+                    ul.empty();<br />
+                    for (var m in movies) {<br />
+                        var movie = movies[m];<br />
+                        var title = movie.title;<br />
+                        console.log(title);<br />
+                        var urlPoster = movie.urlPoster; <br />
+                        var plot = movie.plot;<br />
+                        var li = $("<li>").append(title);<br />
+                        $("<p>").append(plot).appendTo(li);<br />
+                        ul.append(li);<br />
+                        $("<img>").attr("src", urlPoster).appendTo(li);<br />
+                    }<br />
+                }<br />
+            &lt;/script&gt;<br />
+        </div>
+        I have fetched data from free movie api in jsonp format and have parsed it accordingly.
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/ajax.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery.js" target="_blank">View JQuery</a><br />
+        <h2>References</h2>
+        <a href="https://www.youtube.com/watch?v=mErJ3HFWZHs"> Prof Jose's Video Lecture </a><br />
+
+    </div>
+</body>
+</html>

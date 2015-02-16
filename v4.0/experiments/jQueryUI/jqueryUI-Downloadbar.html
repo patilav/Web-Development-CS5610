@@ -1,0 +1,142 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Progressbar - Download Dialog</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/ExperimentStyleSheet.css">
+    <script>
+        $(function () {
+            var progressTimer,
+              progressbar = $("#progressbar"),
+              progressLabel = $(".progress-label"),
+              dialogButtons = [{
+                  text: "Cancel Download",
+                  click: closeDownload
+              }],
+              dialog = $("#dialog").dialog({
+                  autoOpen: false,
+                  closeOnEscape: false,
+                  resizable: false,
+                  buttons: dialogButtons,
+                  open: function () {
+                      progressTimer = setTimeout(progress, 2000);
+                  },
+                  beforeClose: function () {
+                      downloadButton.button("option", {
+                          disabled: false,
+                          label: "Start Download"
+                      });
+                  }
+              }),
+              downloadButton = $("#downloadButton")
+                .button()
+                .on("click", function () {
+                    $(this).button("option", {
+                        disabled: true,
+                        label: "Downloading..."
+                    });
+                    dialog.dialog("open");
+                });
+
+            progressbar.progressbar({
+                value: false,
+                change: function () {
+                    progressLabel.text("Current Progress: " + progressbar.progressbar("value") + "%");
+                },
+                complete: function () {
+                    progressLabel.text("Complete!");
+                    dialog.dialog("option", "buttons", [{
+                        text: "Close",
+                        click: closeDownload
+                    }]);
+                    $(".ui-dialog button").last().focus();
+                }
+            });
+
+            function progress() {
+                var val = progressbar.progressbar("value") || 0;
+
+                progressbar.progressbar("value", val + Math.floor(Math.random() * 3));
+
+                if (val <= 99) {
+                    progressTimer = setTimeout(progress, 50);
+                }
+            }
+
+            function closeDownload() {
+                clearTimeout(progressTimer);
+                dialog
+                  .dialog("option", "buttons", dialogButtons)
+                  .dialog("close");
+                progressbar.progressbar("value", false);
+                progressLabel
+                  .text("Starting download...");
+                downloadButton.focus();
+            }
+        });
+    </script>
+   
+</head>
+<body>
+
+    <div class="experiment">
+        <h1>Download bar!</h1>
+        <div id="dialog" title="File Download">
+            <div class="progress-label">Starting download...</div>
+            <div id="progressbar"></div>
+        </div>
+        <button id="downloadButton">Start Download</button>
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experment 18: JQUERY UI - Progressbar</h1>
+        <h2>About the experiment:</h2>
+        Display status of a determinate or indeterminate process.<br />
+        The progress bar is designed to display the current percent complete for a process. <br />
+        The bar is coded to be flexibly sized through CSS and will scale to fit inside its parent container by default.<br />
+        A determinate progress bar should only be used in situations where the system can accurately update the current status.<br /> 
+        A determinate progress bar should never fill from left to right, then loop back to empty for a single process — if the <br />
+        actual status cannot be calculated, an indeterminate progress bar should be used to provide user feedback.<br />
+
+        <h2>Theming</h2>
+        <p>
+            The progressbar widget uses the jQuery UI CSS framework to style its look and feel. If progressbar specific styling is needed, the following CSS class names can be used:<br />
+            <b>ui-progressbar:</b> The outer container of the progressbar. This element will additionally have a class of ui-progressbar-indeterminate for indeterminate progressbars.<br />
+            <b>ui-progressbar-value:</b> The element that represents the filled portion of the progressbar.<br />
+            <b>ui-progressbar-overlay:</b>  Overlay used to display an animation for indeterminate progressbars.<br />
+        </p>
+        <h3>Dependencies</h3>
+        1. UI Core
+        2. Widget Factory
+        <h3>Additional Notes:</h3>
+        <p>
+            This widget requires some functional CSS, otherwise it won't work. If you build a custom theme, use the widget's specific CSS file as a starting point.
+        </p>
+        <h2>code snippet</h2>
+        <div class="code-snippet">
+            function progress() {<br />
+            var val = progressbar.progressbar("value") || 0;<br />
+            progressbar.progressbar("value", val + Math.floor(Math.random() * 3));<br />
+            if (val <= 99) {<br />
+            progressTimer = setTimeout(progress, 50);<br />
+            }<br />
+            }<br />
+
+        </div>
+
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/jQueryUI-Downloadbar.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/css/jquery-ui.css" target="_blank">View JQuery CSS</a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery-ui.js" target="_blank">View JQuery UI</a><br />
+        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/jquery.js" target="_blank">View JQuery</a><br />
+        <h2>References</h2>
+        <a href="http://jqueryui.com/"> JQuery UI </a><br />
+
+    </div>
+
+</body>
+</html>

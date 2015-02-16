@@ -1,2 +1,6 @@
 ﻿../../story/whatisnext.htm?../experiments/jQueryUI/story.txt				What is Next?
 jQueryUI-basics.html														JQuery UI Dragable, Resizable and Sortable
+jqueryUI-Downloadbar.html													JQuery UI Progressbar
+JQueryNavigation.html														JQuery UI Navigation
+ajax.html																	Ajax Basics with Web API
+angular-basics.html															Angular Basics
