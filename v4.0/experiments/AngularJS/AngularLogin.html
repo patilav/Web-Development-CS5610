@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+   <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<body ng-app="MyApp">
+    <h1 style="text-align : center">Experiment 24: Angular Login</h1>
+    <hr />
+    <div>Demo of the login</div>
+    <p>Kindy use below credentials to sign in :
+    <p>
+        <b>
+            Username: Avanti <br />
+            Password: Avanti
+        </b>
+    </p>
+    <div ng-controller="NavController">
+        <nav class="navbar ">
+
+            <div class="container">
+               
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                             data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">Project name</a>
+                </div>
+
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li ng-show="currentUser"><a href="#profile">Profile</a></li>
+                    </ul>
+
+                    <form ng-show="!currentUser" class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" ng-model="username" placeholder="Username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" ng-model="password" placeholder="Password" class="form-control">
+                        </div>
+                        <button type="submit" class="{{color}}" ng-click="login()">Sign in</button>
+                    </form>
+
+                    <form ng-show="currentUser" class="navbar-form navbar-right">
+                        <button type="submit" ng-click="logout()" class="btn btn-success">Sign out</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div ng-view></div>
+
+    <div>
+        <hr />
+        <hr />
+        <h2>About the Experiment</h2>
+          <p>
+            This experiment extends previous one by adding signing in/out feature. Once signed in,
+            the user is able to access his profile page. Whenever a user logouts' he is redirected to the home
+            page. Here a common LoginService is created that is shared by all controller which store
+            information about the current user.
+        </p>
+        <div class="danger"><b>Code snippet:</b></div> <br /><br />
+       <span id="text">
+            <pre>
+    $scope.login = function() {
+        var username = $scope.username;
+        var password = $scope.password;
+        var res = LoginService.login(username, password);
+        if (res == true) {
+            $scope.currentUser = LoginService.getCurrentUser();
+            $scope.color = &quot;btn btn-success&quot;;
+        } else {
+            $scope.color = &quot;btn btn-danger&quot;;
+        }
+    }
+    app.factory(&quot;LoginService&quot;, function () {
+        var login = function (username, password) {
+            for(var index in users) {
+                if(users[index].username == username &amp;&amp; users[index].password == password) {
+                    currentUser = users[index];
+                    return true;
+                }
+            }
+        return false;
+        }
+    }
+            </pre>
+        </span>
+
+    </div>
+
+    <hr />
+
+    <h2>Source Code</h2>
+    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/AngularLogin.html" target="_blank">View Source</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/angular.min.js" target="_blank">View Angular JS</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/angular-route.min.js" target="_blank">View Angular JS Routing</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/login.js" target="_blank">View login.js JS </a> <br />
+    <hr />
+    <h2>Reference</h2>
+    <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+    <a href="https://www.youtube.com/watch?v=jelXe-t2MPQ" target="_blank">Youtube Lecture</a>
+</body>
+</html>

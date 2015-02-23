@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/ExperimentStyleSheet.css">
+</head>
+<body>
+    <div class="experiment">
+        <h2>Updatable Text</h2> <br />
+        <b>Enter your name below to get the Welcome Message!</b> <br /><br />
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here"><br /><br /><br />
+        <hr>
+        <h1>Welcome {{yourName}}  to the Angular JS Tutorial!</h1>
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 21: AngularJS Intro</h1>
+
+        <h2>About this experiment </h2>
+        <p>
+            Angular JS features two way binding between HTML and JS.
+             It follows MVC pattern in which change to model is reflected immediately on the view and vice-versa. 
+            This experiment demonstrates this feature in which hello is changed by controller in JS file. 
+            Whenever an input is entered view changes as they are binded.
+        </p>
+        <h2>Code Snippet</h2>
+        <div class="code-snippet">
+            <pre>
+            &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt; <br />
+
+            &lt;h1&gt;Welcome {\{yourName}}  to the Angular JS Tutorial!&lt;/h1&gt;
+            </pre>
+        </div>
+        <p>
+            Whenever the data changes the data binding is updating the string inside the text!
+            Versus the approch in JQuery where we have to wait for the main function to fire off when the document is ready.
+            and then you have to lookup for the elementes one way or another whether it's by id or any other way.
+            Once you find the elementes you can set listeners on them and then set a callback.
+            Sometimes they nest a few deep and then update the data. After that its all set up and done.
+        </p>
+           <br />
+        <p>
+            However Angular JS is so simple that basically you write some HTML and sprinkle some expression in data bindings
+            and that will update the HTML itself. It's a very drastic difference.
+            This shows the power and simplicity of angular.
+        </p>
+        <h2>Sources:</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/EditableText.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/angular.min.js" target="_blank">View Angular JS</a> <br />
+        <h2>References</h2>
+        <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+    </div>
+</body>
+</html>

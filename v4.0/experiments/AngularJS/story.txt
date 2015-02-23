@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/AngularJS/story.txt				What is Next?
+EditableText.html															Angular Intro 
+TodoList.html																Angular Filtering
+AngularJs-routing.html														Angular JS routing
+AngularLogin.html															Angular JS Login 
+InstagramFetch.html															Angular Instagram Feed

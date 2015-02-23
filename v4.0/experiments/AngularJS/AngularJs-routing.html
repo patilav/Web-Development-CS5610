@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular JS Routing</title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/ExperimentStylesheet.css" />
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/RoutingController.js"></script>
+</head>
+<body ng-app="mainApp">
+    <div class="experiment">
+        <h1>Website Angular JS routing </h1>
+        <div class="demo-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#/home">Home<span class="sr-only">(current)</span></a></li>
+                                <li><a href="#/login">Login</a></li>
+                                <li><a href="#/search">Search</a></li>
+                                <li><a href="#/favorites">Profile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div ng-view>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="experiment-explaination">
+        <h1>Experiment 23 : Angular JS Routing</h1>
+        <h2>About the experiment</h2>
+        <p id="text">
+            This page gives the look and feel as if we are on the same page where as actually this page is  navigating it through different pages.
+            The angularJS routing property is loading a new page without refreshing the whole page. This specific property of angularJS makes it stand
+            unique among other similar frameworks. 'ngRoute' is a service that is used for naviagtion of this sort. The configuration of
+            ngRoute takes in the actual path and maps it to the corresponding html file and controller. The new file so mapped will use the
+            mapped the attributes and methods in its mapped controller. Every page will have its won controller.
+        </p>
+        <br />
+        <b>Code Snippet:</b>
+        <br />
+        <br />
+        <table class="code-snippet">
+            <tr>
+                <td width="100%">
+                    app.config(function ($routeProvider) { <br />
+                    $routeProvider <br />
+                    .when('/home', { <br />
+                    templateUrl: 'WebsitePages/home.html' <br />
+                    }) <br />
+                    <br />
+                    .when('/login', { <br />
+                    templateUrl: 'WebsitePages/Login.html' <br />
+                    }) <br />
+                    <br />
+                    .when('/search', { <br />
+                    templateUrl: 'WebsitePages/search.html', <br />
+                    controller: 'searchController' <br />
+                    }) <br />
+                    <br />
+                    .when('/favorites', { <br />
+                    templateUrl: 'WebsitePages/NoFavorites.html' <br />
+                    }); <br />
+                    <br />
+                    });<br />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <p>
+            When user clicks a link, it generates a path which is then searched in the config for the url match. Once the match is found, the
+            corresponsing HTML file is loaded. The favorites that the user selects will not be avaiable as the data is not carried out to the
+            next page using service. Its covered in the next experiment.
+        </p>
+        <br />
+        <h2>Source Code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/AngularJs-routing.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/angular.min.js" target="_blank">View Angular JS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/angular-route.min.js" target="_blank">View Angular JS Routing</a> <br />
+        
+        <h2>References</h2>
+        <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+        <a href="https://www.youtube.com/watch?v=jelXe-t2MPQ" target="_blank">Youtube Lecture</a>
+    </div>
+</body>
+</html>

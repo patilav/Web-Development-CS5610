@@ -1,0 +1,97 @@
+﻿        .main-wrapper {
+            height: 80%;
+            width: 96%;
+            padding: 2%;
+        }
+
+        .experiment {
+            border: 2px solid #a1a1a1;
+            padding: 10px 40px;
+            background: #000000;
+            color: #fefdf2;
+            width: 600px;
+            border-radius: 25px;
+            font: 15px/30px Verdana, Geneva, sans-serif;
+            float: left;
+            margin: 50px;
+        }
+
+        input, datalist, button {
+            font: 15px/30px Verdana, Geneva, sans-serif;
+        }
+
+        .experiment-explaination {
+            font: 15px/30px Verdana, Geneva, sans-serif;
+            float: left;
+            margin: 50px;
+            width: 50%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            background-color: #b3b6b5;
+            color: #000000;
+            font-size: 1.1em;
+            padding: 0.5em;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        ul.master_navigation {
+            font-size: 100%;
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+            list-style: none;
+            margin: 0.5em 0;
+        }
+
+            ul.master_navigation li {
+                display: inline-block;
+                padding: 0 0.5%;
+            }
+
+        a {
+            color: #08f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            a:visited {
+                color: #88f;
+            }
+
+            a:hover {
+                color: #88f;
+            }
+
+        p {
+            text-align: justify;
+        }
+
+        body {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #DBDBDD;
+        }
+
+        .pad {
+            padding: 10px;
+        }
+
+        .code-snippet {
+            direction: ltr;
+            text-align: left;
+            font-size: 0.77em;
+            line-height: 0.8em;
+            font: 15px/30px Verdana, Geneva, sans-serif;
+            color: #000000;
+            margin: 4px;
+            padding: 4px;
+            border: solid 1px #808080;
+            background: #c3dff8;
+        }
