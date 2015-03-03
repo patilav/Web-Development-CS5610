@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Node JS simple json result</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/jsonParsing.html">Click Here to see the Output</a>
+            <img src="images/experiment2.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 27 : Simple Node.js JSON Response</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This Experiment is continuation of Experiment 26 <br />
+            JSON(JavaScript Object Notation) is the open standard format uses human readable text to transmit data object co
+            nsisting of attribute value pair. It will return ordered list of values . In other laguage you can say them as
+            lists , vectors , array or sequence .
+            From rest API JSON responce makes it easy in the receiving end to understand easily.
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+            var websites = [ <br />
+            { name: "Site1" }, { name: "Site2" }, { name: "Site3" }, { name: "Site4" }<br />
+            ];<br />
+
+            app.get("/api/website", function (req, resp) {<br />
+            resp.json(websites);<br />
+            });
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will send a json responce to the client who have accessed the link. <br>
+            res.json will send responce in JSON format. 
+            Here in the above code snippet there are two value pair items :
+           For example : name is key and "Site1" is a answer for the key so when at receiving end and same applies
+           to other parameters in the above code snippet.</p>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/JsonParsing.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+        <a href="http://net4.ccs.neu.edu/home/snehav27/experiments/nodejs/SimpleNodeJS.html"> sneha's experiment</a></div>
+</body>
+</html>
+

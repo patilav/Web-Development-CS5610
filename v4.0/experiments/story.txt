@@ -4,3 +4,4 @@
 ../story/index.htm?../experiments/js-jQuery/story.txt				          Week3-JQuery
 ../story/index.htm?../experiments/jQueryUI/story.txt				          Week4-JQuery UI
 ../story/index.htm?../experiments/AngularJS/story.txt				          Week5-AngularJS
+../story/index.htm?../experiments/NodeJs/story.txt							  Week6-NodeJS

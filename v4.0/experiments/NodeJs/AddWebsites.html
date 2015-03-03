@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Node JS parsing json result</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/AddWebsites.html">Click Here to see the Output</a>
+            <img src="images/experiment4.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 29 : Simple Node.js Addition of JSON doc</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This Experiment is continuation of Experiment 28 <br />
+            JSON(JavaScript Object Notation) is the open standard format uses human readable text to transmit data object co
+            nsisting of attribute value pair. It will return ordered list of values . In other laguage you can say them as
+            lists , vectors , array or sequence .
+            From rest API JSON responce makes it easy in the receiving end to understand easily.
+            In this experiment I have added a functionalitty to add new data via JSON content in the Open Shift. 
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+            app.post("/api/website", function (req, resp) { <br />
+            websites.push(req.body);<br />
+            resp.json(websites);<br />
+            });
+
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will post a json response to the server. <br>
+            where the websites will add the new data using http post method.
+            The above code snippet shows that we can use website.push to add each website individually 
+           For example :  "Site5" is a added as a new key and pair
+        </p>
+
+    <div class="code-snippet">
+        var bodyParser = require('body-parser'); <br />
+        var multer = require('multer');<br />
+        app.use(bodyParser.json()); // for parsing application/json<br />
+        app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded<br />
+        app.use(multer()); // for parsing multipart/form-data<br />
+    </div>
+    <p>
+        The above code shows that there is a dependancy of two modules that are<br />
+        1. multer <br />
+        used for parsing multipart/form-data <br />
+        2. body-parser <br />
+        used for for parsing application/json <br />
+
+    </p>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/AddWebsites.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+        <a href="http://net4.ccs.neu.edu/home/snehav27/experiments/nodejs/SimpleNodeJS.html"> sneha's experiment</a></div>
+</body>
+</html>
+

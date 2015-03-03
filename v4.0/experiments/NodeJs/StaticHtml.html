@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Node JS simple response</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the static html <br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/content">Click Here to see the Output</a>
+            <img src="images/experiment1.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 26 : Simple Node.js Response</h1>
+        <h2>About the experiment</h2>
+        Node.js is the cross-platform runtime envirnment for server-side and networking application .
+        In this experiment I have just returned simple text after following steps :<br />
+        1) Register application on Open Shift . <br />
+        2) Create an new node.js application.<br />
+        3) Installed nodeJS and it's dependancies, git, rhc. <br />
+        
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+            app.get('/content', function (req, res) {
+            res.send('&lt;h1&gt;Hello from Open Shift - Static Message&lt;/h1&gt;');
+            });
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will send a simple response to the client who have accessed the link.<br />
+            1) app.get is supported http method in node.js ,app.get will send responce to the client .<br />
+            2) When a server hits http://cs5610-avantipatil.rhcloud.com/ link it will search for /content in js according to the content in the method , js will send responce.
+        </p>
+        <h4>Required Libraries</h4>
+        Express is the framwork used here which is declared as required, require('express') will import the require library to run the application using Express framework .        
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/StaticHtml.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+    </div>
+</body>
+</html>
+

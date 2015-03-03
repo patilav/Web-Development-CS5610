@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Node JS parsing json result</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/ViewWebsites.html">Click Here to see the Output</a>
+            <img src="images/experiment3.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 28 : Simple Node.js parsing JSON Response</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This Experiment is continuation of Experiment 27 <br />
+            JSON(JavaScript Object Notation) is the open standard format uses human readable text to transmit data object co
+            nsisting of attribute value pair. It will return ordered list of values . In other laguage you can say them as
+            lists , vectors , array or sequence .
+            From rest API JSON responce makes it easy in the receiving end to understand easily.
+            In this experiment I have hosted static angular JS content in the Open Shift. 
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+            &lt;tr ng-repeat="website in websites"&gt; <br />
+            &lt;td&gt;{{website.name}}&lt;/td&gt;<br />
+            &lt;/tr&gt;
+
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will recive a json response from the server. <br>
+            res.json will send responce in JSON format. 
+            The above code snippet shows that we can use website.name to check each website individually and 
+        access it's contents
+           For example : name is key and "Site1" is a answer for the key so when at receiving end and same applies
+           to other parameters in the above code snippet.</p>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/ViewWebsites.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/NodeJs/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+        <a href="http://net4.ccs.neu.edu/home/snehav27/experiments/nodejs/SimpleNodeJS.html"> sneha's experiment</a></div>
+</body>
+</html>
+
