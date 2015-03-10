@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Mongodb wih nodejs connection and view data</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/ViewMongodbContents.html">Click Here to see the Output</a>
+            <img src="images/experiment2.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 32 : Mongodb wih nodejs connection and view data</h1>
+        <h2>About the experiment</h2>
+        <p>
+            MongoDB (from humongous) is a cross-platform document-oriented database.
+            Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor
+            of JSON-like documents with dynamic schemas (MongoDB calls the format BSON),
+            making the integration of data in certain types of applications easier and faster.
+            Released under a combination of the GNU Affero General Public License and the Apache License,
+            MongoDB is free and open-source software.
+            In this experiment I have hosted a mongodb database on server which can be used to show
+            the data into node JS webpage in the Open Shift.
+        </p>
+        <h2>Nodejs with mongodb code snippet view</h2>
+        <h4>Node.js and mongodb connection : Code Snippet View:</h4>
+        <div class="code-snippet">
+            var mongoose = require('mongoose');
+            var connectionString = process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost/cs5610';
+            mongoose.connect(connectionString);
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will connect to the database named cs5610 with the help of the node module mongoose<br>
+            Let's face it, writing MongoDB validation, casting and business logic boilerplate is a drag. That's why we have Mongoose.
+            Mongoose provides a straight-forward, schema-based solution to modeling application data and includes built-in type
+            casting, validation, query building, business logic hooks and more, out of the box.
+            More details about mongoose can be found on <a href="http://mongoosejs.com/">Mongoose</a>
+        </p>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/Mongodb/ViewWebsites.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/Mongodb/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/ViewMongodbContents.html">File Code: ViewMongodbContents.html</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/js/CMWApp.js">Controller : CMWController</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a><br />
+
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+        
+    </div>
+</body>
+</html>
+

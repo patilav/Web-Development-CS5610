@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Node JS multilevel crud</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the static html <br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/">Click Here to see the Output</a>
+            <img src="images/experiment1.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 31 : Multilevel Node.js CRUD on JSON</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This Experiment is continuation of Experiment 30 <br />
+            In this experiment I have added a functionalitty to remove data from JSON document in the Open Shift.
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+            //code to remove the page from selected website
+            $scope.removePage = function (pageIndex) { <br />
+            $http.delete("/api/website/" + $scope.selectedIndex + "/page/" + pageIndex)<br />
+            .success(function (response)<br />
+            {<br />
+            $scope.websites = response; <br />
+            $scope.selectedSite = response[$scope.selectedIndex]; <br />
+            }) <br />
+            } <br />
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will delete the a json document on the server which is part of another object ie page which is in currently selected site <br>
+            where the websites will remove the row with given index and data is sent back using http get method to display on the page.
+            The above code snippet shows that we can use http.delete to delete the content from website.
+            the delete will remove the only 1 content starting with given index in the code.
+            
+        </p>
+        
+         <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/Mongodb/MultilevelcrudUsingNodejs.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/Mongodb/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/index.html">File Code: index.html</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/js/CMApp.js">Controller : CMController</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a>
+
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Node JS parsing json result</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/RemoveMongodbContents.html">Click Here to see the Output</a>
+            <img src="images/experiment3.jpg" width="100%" height="100%" />
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 33 : Node.js and Mongodb Delete on website</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This Experiment is continuation of Experiment 32<br />
+            In this experiment I have added a functionalitty to remove data from Database and display the result in the json document in the Open Shift.
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Node.js and mongodb remove website : Code Snippet View:</h4>
+        <div class="code-snippet">
+            //controller code to remove the  site<br />
+            $scope.remove = function (id) {<br />
+            $http.delete("/mongoapi/website/" + id)<br />
+            .success(function (response) {<br />
+            $scope.websites = response;<br />
+            })<br />
+            }<br />
+            //server code to remove the site <br />
+            app.delete("/mongoapi/website/:id", function (req, resp) { <br />
+            WebsiteModel.findById(req.params.id, function (err, doc) {<br />
+            doc.remove();<br />
+            WebsiteModel.find(function (err, data) {<br />
+            resp.json(data);<br />
+            });<br />
+
+            });<br />
+            });<br />
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will delete the a json document on the server and persist it to the mongodb instance on the openshift server. <br>
+            When the websites will remove the row with given index and data is sent back using http delete method to display on the page.
+            The above code snippet shows that we can use app.delete to delete the content from website.
+            the website.splice will remove the only 1 content starting with given index in the code.
+        </p>
+
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/Mongodb/RemoveWebsites.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/Mongodb/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/RemoveMongodbContents.html">File Code: RemoveMongodbContents.html</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/js/CMWApp.js">Controller : CMWController</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a><br />
+
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+    </div>
+</body>
+</html>
