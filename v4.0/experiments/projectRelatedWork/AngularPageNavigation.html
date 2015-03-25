@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular JS Routing</title>
+    <script src="js/jquery.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/RoutingController.js"></script>
+    <script type="text/javascript" src="js/pagenavigation.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body ng-app="pageNavigationApp">
+    <div class="container">
+        <h1>Experiment 3 : Website Page Navigation - Angular JS</h1>
+        <div ng-controller="PaginationDemoCtrl">
+            <h4>Default</h4>
+            <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+            <p></p>
+            <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
+            <p></p>
+            <pre>The selected page no: {{currentPage}}</pre>
+            <button class="btn btn-info" ng-click="setPage(4)">Set current page to: 4</button>
+
+            <hr />
+            <h4>Pager</h4>
+            <pager total-items="totalItems" ng-model="currentPage"></pager>
+
+            <hr />
+            <h4>Max visible buttons</h4>
+            <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+            <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+        </div>
+    </div>
+    <div class="container">
+        
+        <h2>About the experiment</h2>
+        <p id="text">
+            This page displays various types of navigation bars and changing the values of the number of navigation pages which are currently 
+            being accessed and this can be reflected not just one but to all the pages which use the same variable. 
+            i.e.  currentPage and bigCurrentPage
+        </p>
+        <br />
+        <b>Code Snippet:</b>
+        <div class="danger">
+            <pre>
+            $scope.setPage = function (pageNo) {
+                $scope.currentPage = pageNo;
+            };
+            $scope.pageChanged = function () {
+                console.log('Page changed to: ' + $scope.currentPage);
+            };
+            </pre>
+        </div>
+        <p>
+            When user clicks on the link which it wants to go the page will be navigated to that perticular page.
+        </p>
+        <br />
+        <h2>Source Code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/AngularPageNavigation.html" target="_blank">View Source </a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular.min.js" target="_blank">View Angular JS </a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular-route.min.js" target="_blank">View Angular JS Routing </a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/pagenavigation.js" target="_blank">View pagenavigation.js </a> <br />
+        <h2>References</h2>
+        <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+        <a href="https://www.youtube.com/watch?v=jelXe-t2MPQ" target="_blank">Youtube Lecture</a>
+    </div>
+</body>
+</html>

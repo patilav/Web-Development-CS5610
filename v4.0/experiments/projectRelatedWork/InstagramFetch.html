@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Embedding API in HTML</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/InstagramApi.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+    <div class="container">
+        <h1> Experiment 4: Angular Instagram API Feed</h1>
+            <h3><b> Insta Feed</b></h3>
+            <p> Click Refresh below to load images</p>
+            <button class="btn btn-success" id="refresh">REFRESH</button>
+            <div class="instagram">
+            </div>
+    </div>
+    <div class="container">
+
+        
+        <h2>About the experiment</h2>
+        <p>
+            The objective of this experiment is to demonstrate the utility of embedding an external API into the HTML file.
+
+        </p>
+        <p>
+            Instagram is an online mobile photo-sharing, video-sharing and social networking service that enables its users to take pictures and videos, and share them on a variety of social networking platforms, such as Facebook, Twitter, Tumblr and Flickr.
+        </p>
+        <p>
+            Now, using instagram API in the HTML page has enabled us to make use of its features.
+            Below are few images returned by instagram API. These images are tagged under 'Travel' on instagram.
+            Note that these images are the most recent ones. Refresh button below images refreshes only images.
+        </p>
+        <p>
+            We can observe, here, that only the image part of the page gets loaded on clicking Refresh. This
+            is done via an ajax call. Ajax call has enabled us to refresh only partially while restricting the
+            whole page being refreshed. 
+        </p>
+        <b>Code snippet:</b>
+        <div class="code-snippet">
+            <pre>     
+            var imageURL = "https://api.instagram.com/v1/tags/" + "travel" + "/media/recent?client_id=d7824bac4ab04d0ebcdd934d2737a6ff";
+            </pre>
+        </div>
+        <p>
+            As can be seen above, variable imageURL holds the URL to access images. First part of URL is the address of API,
+            second part is concatenated with this URL which describes the tag we wish to retrieve images from. Third part
+            of this code states the address from where these images are supposed to be retrieved. They will be returned
+            from recent folder of media. While the last part is the client ID for the application. Client ID is unique and
+            specific for the application
+        </p>
+        <b>Code snippet:</b>
+        <p>
+            <div class="code-snippet">
+            <pre>
+            $.ajax({
+            type: "GET",
+            url: imageURL,
+            dataType: "jsonp",
+            success: function (data) {
+            for (var i = 0; i < numberOfImages; i += 1) {
+                    var size = data.data[i].images.low_resolution.url;
+                    $(".instagram").append("<xmp><div class='grid" + i + "'><a target='_blank' href='" + data.data[i].link + "'>
+                    <img src='" + size + "' alt='" + data.data[i].caption.text + "' /><span>" + "</span></a></div>");</xmp>
+                    }
+                }
+            });
+            </pre>
+            </div>
+            The code for ajax call begins with type of request, which is 'GET' in this case. Then stated is the url of the images.
+            URL is the one we constructed above (it is call to API). Instagram returns the data in jsonp format. That has been
+            stated in the next line. Next part of code is the action of to be taken on success. In here, the for loop is
+            written to loop around images returned by the API. These images are appended to the div to display on the page.
+        </p>
+        <br />
+        <h2> Source Code:</h2>
+        <a href="../../fileview/Default.aspx?~/Experiments/projectRelatedWork/InstagramFetch.html" target="_blank"> View Source </a>
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/css/ExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular.min.js" target="_blank">View Angular JS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular-route.min.js" target="_blank">View Angular JS Routing</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/InstagramApi.js" target="_blank">View InstagramApi.js JS </a> <br />
+
+
+        <h2> References: </h2>
+        <a href="http://instagram.com/developer/" target="_blank"> Instagram API</a> <br />
+        <a href="http://instagram.com/developer/authentication/" target="_blank"> Instagram API Documentation</a>
+        <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+    </div>
+
+
+</body>
+</html>

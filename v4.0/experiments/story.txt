@@ -5,3 +5,5 @@
 ../story/index.htm?../experiments/jQueryUI/story.txt				          Week4-JQuery UI
 ../story/index.htm?../experiments/AngularJS/story.txt				          Week5-AngularJS
 ../story/index.htm?../experiments/NodeJs/story.txt							  Week6-NodeJS
+../story/index.htm?../experiments/Mongodb/story.txt							  Week7-Mongodb
+../story/index.htm?../experiments/projectRelatedWork/story.txt				  Week8-Project Related Stuff (Angular)

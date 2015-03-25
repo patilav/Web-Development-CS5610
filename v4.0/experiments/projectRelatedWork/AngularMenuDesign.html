@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="">
+<head runat="server">
+    <title>Menu navigation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<body class="modal-body">
+    <header class="page-header">
+        <h1>Experiment 5: Menu navigation</h1>
+        <p>Use bootstrap to create a navigation bar appear at the top of a page.</p>
+    </header>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="titlebold"><p href="#home" role="tab" data-toggle="tab">Home Page</p></li>
+        <li role="presentation"><a href="#signin" role="tab" data-toggle="tab">Sign in</a></li>
+        <li role="presentation"><a href="#register" role="tab" data-toggle="tab">Register</a></li>
+        <li role="presentation"><a href="#about" role="tab" data-toggle="tab">About</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <div class="container" ng-controller="profileCtrl">
+                <form role="form">
+                    <div class="form-group">
+                        <label>Username: </label>
+                        <input type="text" ng-model="user.username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Show Name: </label>
+                        <input type="text" ng-model="user.nickname" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email: </label>
+                        <input type="text" ng-model="user.email" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address: </label>
+                        <input type="text" ng-model="user.address" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description: </label>
+                        <textarea class="form-control">{{user.description}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Following: </label>
+                        <label><a class="followingLabel" ng-click="showFollowing()">{{user.following.count}}</a></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Follower: </label>
+                        <label><a class="followerLabel" ng-click="showFollower()">{{user.follower.count}}</a></label>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-large btn-parimary" ng-click="saveProfie()">Save</button>
+                        <button class="btn btn-large btn-parimary">Change Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div role="tabpanel" class="tab-pane" id="about">
+            <div class="container about-tab">
+                <h3>About us</h3>
+                This is is an About Us page.
+            </div>
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="signin">
+            <div class="container">
+                <form role="form" class="container signupform">
+
+                    <div class="form-group">
+                        <label>User Name: </label>
+                        <input type="text" class="form-control username" placeholder="User name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password: </label>
+                        <input type="password" class="form-control password" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox"><span> "Remember Me"</span>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-large btn-primary">Sign in</button>
+                        <a class="btn btn-large btn-info" href="#register" data-toggle="tab">Register</a>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="register">
+            <div class="container">
+                <form role="form" class="container registerform">
+                    <div class="form-group">
+                        <label>User Name: </label>
+                        <input type="text" class="form-control username" placeholder="User name" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email: </label>
+                        <input type="text" class="form-control email" placeholder="example@example.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password: </label>
+                        <input type="password" class="form-control password" placeholder="Password" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Retype Password: </label>
+                        <input type="password" class="form-control retype-password" placeholder="Password" />
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-large btn-primary">Register</button>
+                        <a class="btn btn-large btn-info" href="#signin" data-toggle="tab">Sign in</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h2>About the Experiment</h2>
+        <p>
+            This experiment provides the demo of menu navigation in Angular JS.
+            UI Bootstrap is Bootstrap components written in pure AngularJS by the AngularUI Team.
+            To demonstrate the same in the code kindly refer the code below.
+
+        </p>
+
+
+        <ul>
+            <li>
+                <p>Navigation Bar</p>
+                <pre class="pre-scrollable">
+                    &lt;ul class="nav nav-tabs" role="tablist"&gt;
+                    &lt;li role="presentation" class="title"&gt;&lt;p href="#home" role="tab" data-toggle="tab"&gt;Home Page&lt;/p&gt;&lt;/li&gt;
+                    &lt;li role="presentation" &gt;&lt;a href="#about" role="tab" data-toggle="tab"&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li role="presentation" &gt;&lt;a href="#signin" role="tab" data-toggle="tab"&gt;Sign in&lt;/a&gt;&lt;/li&gt;
+                    &lt;li role="presentation" &gt;&lt;a href="#register" role="tab" data-toggle="tab"&gt;Register&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                </pre>
+            </li>
+            <li>
+                <p>profile Controller</p>
+                <pre class="pre-scrollable">
+            function profileCtrl($scope) {
+            var user = {
+            username: "admin",
+            nickname: "Alice",
+            email: "alice@gamil.com",
+            address: "360 huntington ave, boston",
+            description: "hello this is my home page",
+            following: {
+            count: 5,
+            detail: ['Jack ', 'Peter ', 'Cary ', 'Linda ', 'Lucy ']
+            },
+            follower: {
+            count: 3,
+            detail: ['Jack ', 'Peterp ', 'Linda ']
+            }
+            };
+            $scope.user = user;
+            console.log(user.description);
+            $scope.showFollowing = function () {
+            $('.followingLabel').empty();
+            $('.followingLabel').append(user.follower.detail);
+    }
+    $scope.showFollower = function () {
+        $('.followerLabel').empty();
+        $('.followerLabel').append(user.follower.detail);
+    }
+    $scope.saveProfie = function () {
+        user = $scope.user;
+    }
+}
+</pre>
+            </li>
+        </ul>
+
+        <h2> Source Code:</h2>
+        <a href="../../fileview/Default.aspx?~/Experiments/projectRelatedWork/AngularMenuDesign.html" target="_blank"> View Source </a>
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/css/bootstrap.css" target="_blank">View CSS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular.min.js" target="_blank">View Angular JS</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular-route.min.js" target="_blank">View Angular JS Routing</a> <br />
+        
+        <h2> References: </h2>
+        <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+    </div>
+</body>
+</html>

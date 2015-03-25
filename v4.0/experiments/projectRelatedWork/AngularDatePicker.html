@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+</head>
+
+<body ng-app="MyApp">
+    <div class="container">
+    <h1 style="text-align : center">Experiment 2: Angular Date picker</h1>
+    <hr />
+    <div ng-controller="MyCntl">
+        <h1>Date Picker</h1>
+        <hr />
+        <p class="input-group">
+            <input type="text" class="form-control" 
+                   datepicker-popup="{{format}}" ng-model="dt" 
+                   is-open="opened" min-date="minDate" max-date="'2015-06-22'" 
+                   datepicker-options="dateOptions" date-disabled="disabled(date, mode)" 
+                   ng-required="true" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+    </div>
+        <hr />
+        <h2>About the Experiment</h2>
+        <p>
+            This experiment provides the demo of date picker in Angular JS.
+            UI Bootstrap is Bootstrap components written in pure AngularJS by the AngularUI Team.
+            To demonstrate the date picker in the code kindly refer the code below.
+            
+        </p>
+        <div class="danger">
+        <b>Code snippet:</b>
+        <pre>
+        $scope.open = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.minDate = $scope.minDate ? null : new Date();
+        $scope.opened = true;
+        };
+        </pre>
+        </div>
+    
+    <hr />
+
+    <h2>Source Code</h2>
+    <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/AngularDatePicker.html" target="_blank">View Source</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular.min.js" target="_blank">View Angular JS</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/angular-route.min.js" target="_blank">View Angular JS Routing</a> <br />
+    <a href="../../fileview/Default.aspx?~/experiments/projectRelatedWork/js/datepicker.js" target="_blank">View datepicker.js JS </a> <br />
+    <hr />
+    <h2>Reference</h2>
+    <a href="https://angularjs.org/" target="_blank"> Angular JS </a><br />
+    
+    <a href="https://angular-ui.github.io/bootstrap/" target="_blank">UI for Angular</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/projectRelatedWork/story.txt				What is Next?
+AngularDatePicker.html														Angular date picker
+AngularPageNavigation.html													Angular Page navigation bar
+HideText.html																Angular Hide/Unhide text 
+InstagramFetch.html															Angular Instagram fetch
+AngularMenuDesign.html														Angular Menu design
