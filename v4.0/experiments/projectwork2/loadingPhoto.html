@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Project sign up</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/mongodb/preview.html">Click Here to see the Output</a>
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 44 : Project load photo</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This experiment demonstrates selecting file and having an immediatepreview for that file. 
+            An event handler is installed for change event and once there is any change in the file upload 
+            handleFileSelect function is called that first converts file into base64 format and then displays 
+            it using ng-model binded in the HTML file.
+            <br />
+            MongoDB (from humongous) is a cross-platform document-oriented database.
+            Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor
+            of JSON-like documents with dynamic schemas (MongoDB calls the format BSON),
+            making the integration of data in certain types of applications easier and faster.
+            Released under a combination of the GNU Affero General Public License and the Apache License,
+            MongoDB is free and open-source software.<br />
+
+            In this experiment I have added a functionalitty to add new photo for user via JSON content in Mongodb database hosted on the Open Shift. 
+            You can create your own Username and Password to login into the database
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+        <pre>
+        var handleFileSelect = function (evt) {
+        var files = evt.target.files;
+        var file = files[0];
+        if (files && file) {
+            var reader = new FileReader();
+            reader.onload = function (readerEvt) {
+                var binaryString = readerEvt.target.result;
+                $scope.loc = "data:image/jpeg;base64," + btoa(binaryString);
+                $scope.$apply();
+            };
+            reader.readAsBinaryString(file);
+        }
+    };
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        $('#filePicker').change(handleFileSelect);
+    } else {
+        alert('The File APIs are not fully supported in this browser.');
+    }
+       </pre>
+
+            <h3>Description: </h3>
+            The callback function gives value true or false followed by the details of the signup response.
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/loadingPhoto.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/preview.html">File Code: preview.html</a>  <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/js/preview.js">Controller : preview</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+</body>
+</html>
+

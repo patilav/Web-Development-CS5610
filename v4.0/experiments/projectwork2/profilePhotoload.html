@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Project sign up</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/mongodb/photo.html">Click Here to see the Output</a>
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 45 : Project load photo on profile</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This experiment demonstrates selecting file and having an immediatepreview for that file. 
+            An event handler is installed for change event and once there is any change in the file upload 
+            handleFileSelect function is called that first converts file into base64 format and then displays 
+            it using ng-model binded in the HTML file.
+            <br />
+            MongoDB (from humongous) is a cross-platform document-oriented database.
+            Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor
+            of JSON-like documents with dynamic schemas (MongoDB calls the format BSON),
+            making the integration of data in certain types of applications easier and faster.
+            Released under a combination of the GNU Affero General Public License and the Apache License,
+            MongoDB is free and open-source software.<br />
+
+            In this experiment I have added a functionalitty to add new photo for user via JSON content in Mongodb database hosted on the Open Shift. 
+            You can create your own Username and Password to login into the database while adding your photo to it.
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+        <pre>
+    app.controller("SignupController", function ($scope, $modalInstance, LoginService, $http) {
+    $scope.loc = "//placehold.it/100";
+    $scope.fail = false;
+    var photo = "";
+    ...
+    LoginService.signUp(username, password, email, firstName, lastName, photo, callback);   
+    ...
+       </pre>
+
+            <h3>Description: </h3>
+            The callback function gives value true or false followed by the details of the signup response.
+            With the placeholder the location of the image has been stored.
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/profilePhotoload.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/photo.html">File Code: photo.html</a>  <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/js/photo.js">Controller : photo</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+</body>
+</html>
+

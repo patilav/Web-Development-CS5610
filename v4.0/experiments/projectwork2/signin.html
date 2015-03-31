@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Project sign in</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/mongodb/savemongo.html">Click Here to see the Output</a>
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 41 : Project Sign in</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This Experiment demonstrates the login part of the project<br />
+            MongoDB (from humongous) is a cross-platform document-oriented database.
+            Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor
+            of JSON-like documents with dynamic schemas (MongoDB calls the format BSON),
+            making the integration of data in certain types of applications easier and faster.
+            Released under a combination of the GNU Affero General Public License and the Apache License,
+            MongoDB is free and open-source software.<br />
+
+            In this experiment I have added a functionalitty to add new data via JSON content in Mongodb database hosted on the Open Shift. 
+            Kindly use Username: avantip Password: admin73 to login into the database
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+        <pre>
+            var login = function (user, callback) {
+                $http.post("/mongodb/000-login", user)
+                .success(function (response) {
+                currentUser = response[0];
+                callback();
+                });
+            }
+        
+
+        // to check the login 
+            app.post('/001-login', function (req, res) {
+            var username = req.body.username;
+            var password = req.body.password;
+            var currentUser = null;
+            for (var index in users) {
+                if (users[index].username == username && users[index].password == password) {
+                currentUser = users[index];
+            }
+        }
+        res.json(currentUser);
+});
+
+        </pre>
+        </div>
+
+        <p>
+            Description : <br />
+            Above code snippet will post a json response to the mongodb server hosted on openshift with the given connection link. <br>
+            where the websites will add the new data using http post method.
+            The above code snippet shows that we can use website.push to add each website individually 
+           
+        </p>
+
+    <div class="code-snippet">
+        var bodyParser = require('body-parser'); <br />
+        var multer = require('multer');<br />
+        app.use(bodyParser.json()); // for parsing application/json<br />
+        app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded<br />
+        app.use(multer()); // for parsing multipart/form-data<br />
+    </div>
+    <p>
+        The above code shows that there is a dependancy of two modules that are<br />
+        1. multer <br />
+        used for parsing multipart/form-data <br />
+        2. body-parser <br />
+        used for for parsing application/json <br />
+
+    </p>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/signin.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/savemongo.html">File Code: savemongo.html</a>  <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/js/savemongo.js">Controller : savemongo</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html manifest="demo_html.appcache">
+<head>
+    <title>Project sign up</title>
+    <link rel="stylesheet" href="HTMLExperimentStyleSheet.css">
+</head>
+
+<body>
+    <div class="experiment">
+        <p>
+            This link shows the output returned in json format<br />
+            <a href="http://cs5610-avantipatil.rhcloud.com/mongodb/signupsave.html">Click Here to see the Output</a>
+        </p>
+
+    </div>
+
+    <div class="experiment-explaination">
+        <h1>Experiment 43 : Project Sign up</h1>
+        <h2>About the experiment</h2>
+        <p>
+            This experiment demonstrates the use of ui-bootstrap an Angular JS module for modal which is like 
+            a pop up used for signup form. For when a button click event is generated modal is open and used to display a form of signup. 
+            Also, various validation checks are added in the experiment.<br />
+            This experiment follows previous experiment and saves data on the mongodb server 
+            to enable login for the registered user. Once, the form is filled an HTTP Post request is sent to 
+            the server which validates username clash and if it was able to accept the request; it responds with true else it responds with false.
+            MongoDB (from humongous) is a cross-platform document-oriented database.
+            Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor
+            of JSON-like documents with dynamic schemas (MongoDB calls the format BSON),
+            making the integration of data in certain types of applications easier and faster.
+            Released under a combination of the GNU Affero General Public License and the Apache License,
+            MongoDB is free and open-source software.<br />
+
+            In this experiment I have added a functionalitty to add new user via JSON content in Mongodb database hosted on the Open Shift. 
+            You can create your own Username and Password to login into the database
+        </p>
+        <h2>Nodejs code snippet view</h2>
+        <h4>Simple Node.js : Code Snippet View:</h4>
+        <div class="code-snippet">
+        <pre>
+             var signUp = function (username, password, email, firstName, lastName, photo, callback) {
+        var user = {
+            username: username,
+            password: password,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            photo: photo
+        };
+        $http.post("/mongodb/002-signup", user)
+        .success(function (response) {
+            if (response.response == 'false')
+                callback(false);
+            else
+                callback(true);
+        });
+    }
+       </pre>
+
+            <h3>Description: </h3>
+            The callback function gives value true or false followed by the details of the signup response.
+        </div>
+        <h2>Source code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/signup.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork2/HTMLExperimentStyleSheet.css" target="_blank">View CSS</a> <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/signupsave.html">File Code: signupsave.html</a>  <br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/public/mongodb/js/signupsave.js">Controller : signupsave</a><br />
+        <a href="https://github.com/patilav/OpenshiftRepos/blob/master/server.js">Server.js</a>
+        <h2>References</h2>
+        <a href="https://www.youtube.com/user/jannunzi"> Prof. Jose's Video Lecture </a><br />
+</body>
+</html>
+

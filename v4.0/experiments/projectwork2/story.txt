@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/projectwork2/story.txt				What is Next?
+signin.html																Project : Sign in 	
+signup-modal.html														Project : Sign up modal
+signup.html																Project : Sign up
+loadingPhoto.html														Project : Load photo
+profilePhotoLoad.html													Project : Load photo on profile
