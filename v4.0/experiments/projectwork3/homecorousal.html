@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home for project</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycarousal.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="css/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Experiment 2: Home of project</h1>
+        </header>
+        <h2>Description</h2>
+        <p>
+            Home window of the project has been presented in a carousel-based interface defined in the UI Bootstrap framework. 
+            
+            The type of artwork is used as the background text for a slide, with the main area composed of all other information associated with 
+            the features available. 
+            
+            Navigation is made using arrow keys to the left and right or the bubbles at the bottom of a slide.
+
+            In addition to these, automatic transition occurs after a fixed interval.
+        </p>
+
+        <hr />
+        Demo 
+        <a href="http://cs5610project-avantipatil.rhcloud.com/#/home">Check the link to see the home page</a>
+        <hr />
+
+        <!-- Documentation -->
+        <h2>Documentation</h2>
+        <h3>Carousels</h3>
+        <p>
+            A carousel is created using the specified 'carousel' and 'slide' classes. An interval has been provided to indicate the time elapsed before slide transition takes place on its own. Slides are added using the 'carousel-inner' class containing individual item divisions ('div' tags). Controls are defined by utilizing the 'data-slide' property and in-built glyphicons are used to represent the actual control items.
+        </p>
+        <h4>Code snippet:</h4>
+        <pre class="pre-scrollable prettyprint pre-show">
+            &lt;div style="height: 305px">
+                            &lt;carousel interval="myInterval">
+                                &lt;slide ng-repeat="slide in slides" active="slide.active">
+                                    &lt;img ng-src="{{slide.image}}" style="margin:auto;">
+                                    &lt;div class="carousel-caption">
+                                        &lt;h4>Slide {{$index}}</h4>
+                                        &lt;p>{{slide.text}}</p>
+                                    &lt;/div>
+                                &lt;/slide>
+                            &lt;/carousel>
+                        &lt;/div>
+                        &lt;div class="row">
+                            &lt;div class="col-md-6">
+                                &lt;button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+                            &lt;/div>
+                            &lt;div class="col-md-6">
+                    Interval, in milliseconds: &lt;input type="number" class="form-control" ng-model="myInterval">
+                    <br />
+                    Enter a negative number or 0 to stop the interval.
+                            &lt;/div>
+                        &lt;/div>
+        </pre>
+
+        <hr />
+        <h2>Source Code</h2>
+        <a href="https://github.com/patilav/WebDevProject/blob/master/public/partials/home.html" target="_blank">View Source</a> <br />
+        <a href="https://github.com/patilav/WebDevProject/blob/master/public/js/main.js" target="_blank">View JS</a>
+            <hr />
+            <h2>Reference</h2>
+            <a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a>
+
+</div>
+
+</body>
+</html>

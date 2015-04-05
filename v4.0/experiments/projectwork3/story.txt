@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/projectwork3/story.txt				What is Next?
+carousal.html																	Project : Carousal sample 
+homecorousal.html																Project : Home page carousal display
+editprofile.html																Project : Edit profile
+addartwork.html																	Project : Add comments
+addcomments.html																Project : Add artwork

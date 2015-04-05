@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow of main headers</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycarousal.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="css/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Experiment 1: Carousel: Main Slider information navogation </h1>
+        </header>
+        <h2>Description</h2>
+        <p>
+            Types of artwork for the projects have been presented in a carousel-based interface defined in the Bootstrap framework. 
+                        
+            The type of artwork is used as the background text for a slide, with the main area composed of all other information associated with 
+            the features available. 
+            
+            Navigation is made using arrow keys to the left and right or the bubbles at the bottom of a slide.
+
+            In addition to these, automatic transition occurs after a fixed interval.
+        </p>
+
+        <hr />
+
+        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item">
+                    <h2 class="carousel-blurb">Writers and Poets</h2>
+                    <div class="carousel-caption">
+                        <h3>Create and Share your creativity</h3>
+                        <p>
+                            <br />
+                            <br />
+                            <br />
+                            Collaborate through new type of media
+                            <br />
+                            Comment |  Like  |  Share<br />
+                            <br />
+                            *Terms and conditions<br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h2 class="carousel-blurb">Painters and Doodlers</h2>
+                    <div class="carousel-caption">
+                        <h3>Create and Share your creativity</h3>
+                        <p>
+                            <br />
+                            <br />
+                            <br />
+                            Collaborate through new type of media
+                            <br />
+                            Comment |  Like  |  Share<br />
+                            <br />
+                            *Terms and conditions<br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h2 class="carousel-blurb">Musicians and Filmmakers</h2>
+                    <div class="carousel-caption">
+                        <h3>Create and Share your creativity</h3>
+                        <p>
+                            <br />
+                            <br />
+                            <br />
+                            Collaborate through new type of media
+                            <br />
+                            Comment |  Like  |  Share<br />
+                            <br />
+                            *Terms and conditions<br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel navigation -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <hr />
+
+        <!-- Documentation -->
+        <h2>Documentation</h2>
+        <h3>Carousels</h3>
+        <p>
+            A carousel is created using the specified 'carousel' and 'slide' classes. An interval has been provided to indicate the time elapsed before slide transition takes place on its own. Slides are added using the 'carousel-inner' class containing individual item divisions ('div' tags). Controls are defined by utilizing the 'data-slide' property and in-built glyphicons are used to represent the actual control items.
+        </p>
+        <h4>Code snippet:</h4>
+        <code class="code-snippet">
+            &lt;div  id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel"> <br />
+            &lt;ol class="carousel-indicators"> <br />
+            &lt;li data-target="#myCarousel" data-slide-to="0" class="active">&lt;/li> <br />
+            &lt;li data-target="#myCarousel" data-slide-to="1">&lt;/li> <br />
+            &lt;li data-target="#myCarousel" data-slide-to="2">&lt;/li> <br />
+            &lt;/ol> <br />
+             <!-- Carousel items --> <br />
+            &lt;div class="carousel-inner"> <br />
+            &lt;div class="active item"> <br />
+            &lt;h2 class="carousel-blurb">Writers and Poets&lt;/h2> <br />
+            &lt;div class="carousel-caption"> <br />
+            &lt;h3>Create and Share your creativity&lt;/h3> <br />
+            &lt;p> <br />
+                             Collaborate through new type of media<br />
+                             Comment |  Like  |  Share <br />
+                             *Terms and conditions<br />
+            &lt;/p> <br />
+            &lt;/div> <br />
+            &lt;/div> <br />
+           <!-- Carousel navigation --> <br />
+            &lt;a class="carousel-control left" href="#myCarousel" data-slide="prev"> <br />
+            &lt;span class="glyphicon glyphicon-chevron-left">&lt;/span> <br />
+            &lt;/a> <br />
+            &lt;a class="carousel-control right" href="#myCarousel" data-slide="next"> <br />
+            &lt;span class="glyphicon glyphicon-chevron-right">&lt;/span> <br />
+            &lt;/a> <br />
+            &lt;/div> <br />
+        
+        </code>
+
+        <hr />
+        <h2>Source Code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork3/carousal.html" target="_blank">View Source</a> <br />
+        <a href="../../fileview/Default.aspx?~/experiments/projectwork3/css/mycarousal.css" target="_blank">View CSS</a> <br />
+        <hr />
+        <h2>Reference</h2>
+        <a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a>
+
+    </div>
+
+</body>
+</html>

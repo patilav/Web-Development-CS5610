@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit profile</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycarousal.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="css/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Experiment 3: Edit user profile </h1>
+        </header>
+        <h2>Description</h2>
+        <p>
+            After loggin in to the application user has an option to see and update his own profile.
+            This facility will allow user to change First name, last name, password ,email address and profile picture.
+            Allowing user to change only above details and restrincting from chaning the username is the main objective. 
+            The code has been generated for the same. 
+        </p>
+
+        <hr />
+        Kidly  create user account before logging in <br />
+        Demo <br />
+        <a href="http://cs5610project-avantipatil.rhcloud.com">Check the link to see the profile page
+        </a>
+        
+        <hr />
+
+        <h4>Code snippet:</h4>
+        <pre class="pre-scrollable prettyprint pre-show">
+        app.controller("HomeController", function ($scope, $routeParams, $http) {
+        $scope.myInterval = 5000;
+        var slides = $scope.slides = [];
+        $scope.addSlide = function () {
+        var newWidth = 600 + slides.length + 1;
+        slides.push({
+            image: 'http://placekitten.com/' + newWidth + '/300',
+            text: ['More', 'Extra', 'Lots of', 'Surplus'][slides.length % 4] + ' ' +
+              ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+            });
+        };
+            for (var i = 0; i < 4; i++) {
+                $scope.addSlide();
+            }
+        });
+
+
+        //server.js 
+            app.post('/updateprofile', function (req, res) {
+                var username = req.body.username;
+                userModel.update({ username: username }, { $set: req.body }, function (err, data) {
+                userModel.find(function (err, data) {
+                    res.json(data);
+                    });
+                });
+            });
+
+        </pre>
+        <hr />
+        <h2>Source Code</h2>
+        <a href="https://github.com/patilav/WebDevProject/blob/master/public/partials/profile.html" target="_blank">View Source</a> <br />
+        <a href="https://github.com/patilav/WebDevProject/blob/master/public/js/main.js" target="_blank">View JS</a> <br />
+        <hr />
+        <h2>Reference</h2>
+        <a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a>
+    </div>
+
+</body>
+</html>

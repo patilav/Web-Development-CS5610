@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit profile</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycarousal.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="css/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Experiment 4: Add comments </h1>
+        </header>
+        <h2>Description</h2>
+        <p>
+            After loggin in to the application user has an option to add comments this is just the sample adding data to the comment schema.
+            This facility will allow user to add comments to the perticular artwork as of now i have just implemented a structure to add
+            individul comments. 
+            The code has been generated for the same. 
+        </p>
+
+        <hr />
+        Kidly  create user account before logging in <br />
+        Demo <br />
+        <a href="http://cs5610project-avantipatil.rhcloud.com">Check the link to see the profile page
+        </a>
+        
+        <hr />
+
+        <h4>Code snippet:</h4>
+        <pre class="pre-scrollable prettyprint pre-show">
+// Comment schema
+
+var commentSchema = new mongoose.Schema({
+    username: String,
+    text: String
+}, { collection: 'comment' });
+
+        
+//server.js  (get and post in the server )
+
+app.get('/usercomment', function (req, res) {
+    commentModel.find(function (err, data) {
+        res.json(data);
+    });
+});
+app.post('/usercomment', function (req, res) {
+    var comment = new commentModel(req.body);
+    comment.save(function () {
+        commentModel.find(function (err, data) {
+            res.json(data);
+        });
+    });
+});
+
+        </pre>
+        <hr />
+        <h2>Source Code</h2>
+        <a href="https://github.com/patilav/WebDevProject/blob/master/public/partials/comment.html" target="_blank">View Source</a> <br />
+        <a href="https://github.com/patilav/WebDevProject/blob/master/public/js/main.js" target="_blank">View JS</a> <br />
+        <hr />
+        <h2>Reference</h2>
+        <a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a>
+    </div>
+
+</body>
+</html>
